@@ -488,4 +488,11 @@ footer ul{list-style:none;padding:0;margin:0}
     width:56px;height:56px;border-radius:12px;object-fit:cover
   }
   .spec-row{grid-template-columns:1fr;gap:2px}
+  .product-detail-body h1{font-size:23px;max-width:100%}
+  .product-price{font-size:19px}
+  .product-detail-media{min-height:220px}
+  .product-detail-media .formula{width:150px;height:150px}
+  .product-detail-media .formula svg{width:110px;height:110px}
+  .product-detail-actions{flex-direction:column;align-items:stretch}
+  .product-detail-actions .btn{width:100%;white-space:normal}
 }
