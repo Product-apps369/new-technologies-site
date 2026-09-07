@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 260">
+  <defs>
+    <linearGradient id="bgSup" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef6fb"/>
+      <stop offset="100%" stop-color="#dcecf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="260" fill="url(#bgSup)"/>
+
+  <!-- headset arc -->
+  <path d="M85 140 a65 65 0 0 1 130 0" fill="none" stroke="#0b2f68" stroke-width="8" stroke-linecap="round"/>
+  <rect x="75" y="132" width="26" height="46" rx="12" fill="#2d6bb3"/>
+  <rect x="199" y="132" width="26" height="46" rx="12" fill="#2d6bb3"/>
+  <path d="M212 178 v14 a14 14 0 0 1 -14 14 h-18" fill="none" stroke="#0b2f68" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- chat bubble with dots (consultation) -->
+  <g>
+    <rect x="150" y="60" width="90" height="56" rx="16" fill="#ffffff" stroke="#0b2f68" stroke-width="5"/>
+    <path d="M168 116 l-4 18 18 -14 z" fill="#ffffff" stroke="#0b2f68" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="175" cy="88" r="5" fill="#5ec3d6"/>
+    <circle cx="195" cy="88" r="5" fill="#2d6bb3"/>
+    <circle cx="215" cy="88" r="5" fill="#0b2f68"/>
+  </g>
+</svg>

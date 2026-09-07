@@ -1,0 +1,892 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Новые технологии — Главная</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b2f68'/%3E%3Ccircle cx='11' cy='13' r='3.2' fill='%235ec3d6'/%3E%3Ccircle cx='21' cy='13' r='3.2' fill='%235ec3d6'/%3E%3Ccircle cx='16' cy='21' r='3.2' fill='%235ec3d6'/%3E%3Cline x1='11' y1='13' x2='21' y2='13' stroke='%23fff' stroke-width='1.4'/%3E%3Cline x1='11' y1='13' x2='16' y2='21' stroke='%23fff' stroke-width='1.4'/%3E%3Cline x1='21' y1='13' x2='16' y2='21' stroke='%23fff' stroke-width='1.4'/%3E%3C/svg%3E" />
+<style>
+/* ==========================================================================
+   DESIGN TOKENS — «Новые технологии»
+   Единый источник значений: цвета, отступы, радиусы, тени, типографика,
+   breakpoints. Значения зафиксированы по текущему утверждённому прототипу
+   Главной страницы — здесь ничего не меняется без согласования дизайна.
+   ========================================================================== */
+
+:root{
+  /* --- Colors: core palette (as used in approved prototype) --- */
+  --navy:#0b2f68;
+  --navy-2:#123c73;
+  --blue:#2d6bb3;
+  --cyan:#5ec3d6;
+  --text:#173d68;
+  --muted:#6e8196;
+  --line:#d9e7f1;
+  --soft:#f5f9fc;
+  --soft2:#eef6fb;
+  --white:#fff;
+
+  /* --- Colors: extended usage tokens (documented from current CSS) --- */
+  --color-bg:#fff;
+  --color-border-header:#e3ebf2;
+  --color-border-section:#e8eff5;
+  --color-border-card:#dbe7f0;
+  --color-border-card-alt:#dfe9f1;
+  --color-border-card-alt2:#dce7f0;
+  --color-border-input:#d8e5ef;
+  --color-btn-secondary-border:#bcd0e1;
+  --color-btn-secondary-border-hover:#8fb1cf;
+  --color-icon-border:#2f70b8;
+  --color-accent-teal:#4ca6be;
+  --color-link:#2d66a4;
+  --color-text-muted-2:#536f89;
+  --color-text-muted-3:#6f8498;
+  --color-text-muted-4:#687f94;
+  --color-text-muted-5:#718598;
+  --color-text-muted-6:#73879a;
+  --color-text-muted-7:#74889b;
+  --color-text-muted-8:#75899b;
+  --color-text-muted-9:#586f84;
+  --color-nav-text:#35536f;
+  --color-footer-bg-1:#082f68;
+  --color-footer-bg-2:#06295a;
+  --color-footer-text:#c2d5e5;
+  --color-footer-copy:#a9c4da;
+  --color-map-bg:#eef4ef;
+
+  /* --- Spacing scale (px) --- */
+  --space-2xs:6px;
+  --space-xs:9px;
+  --space-sm:11px;
+  --space-md:14px;
+  --space-lg:16px;
+  --space-xl:22px;
+  --space-2xl:28px;
+  --space-3xl:35px;
+  --space-4xl:44px;
+  --space-5xl:58px;
+
+  /* --- Radii --- */
+  --radius-sm:8px;
+  --radius-md:10px;
+  --radius-lg:13px;
+  --radius-xl:14px;
+  --radius-2xl:15px;
+  --radius-3xl:18px;
+  --radius-round:50%;
+
+  /* --- Shadows --- */
+  --shadow-hero:0 16px 40px rgba(23,61,104,.08);
+
+  /* --- Typography --- */
+  --font-family:Inter,"Segoe UI",Arial,sans-serif;
+  --font-h1:48px;
+  --font-h2:31px;
+  --font-h2-lg:28px;
+  --font-h2-xl:27px;
+  --font-h2-search:26px;
+  --font-h3-card:20px;
+  --font-body:14px;
+  --font-small:13px;
+  --font-xs:11px;
+  --font-2xs:10px;
+  --font-3xs:9px;
+  --font-4xs:8px;
+  --line-height-body:1.72;
+  --letter-spacing-tight:-.01em;
+  --letter-spacing-h1:-.035em;
+
+  /* --- Layout --- */
+  --container-max:1260px;
+  --container-gutter:60px;
+  --container-gutter-mobile:30px;
+  --header-height:76px;
+  --hero-min-height:520px;
+
+  /* --- Breakpoints (reference only — used in responsive.css) --- */
+  --bp-tablet:1000px;
+}
+/* ==========================================================================
+   COMPONENTS — переиспользуемые элементы (базовые стили, кнопки, header,
+   footer, section-заголовки). Используются на Главной и будут повторно
+   использованы на остальных 5 страницах проекта.
+   ========================================================================== */
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:#fff; color:var(--text);
+  font-family:Inter,"Segoe UI",Arial,sans-serif; letter-spacing:-.01em;
+}
+a{text-decoration:none;color:inherit}
+button,input,select{font:inherit}
+.wrap{width:min(1260px,calc(100% - 60px));margin:0 auto}
+h1,h2,h3,p{margin:0}
+h2{font-size:31px;line-height:1.1;color:var(--navy);font-weight:800}
+
+/* SECTION */
+.section{padding:58px 0}
+.section-title{display:flex;align-items:center;gap:18px;margin-bottom:25px}
+.section-title h2{white-space:nowrap}
+.section-title:after{content:"";height:1px;background:var(--line);flex:1}
+.section-link{margin-left:auto;font-size:12px;font-weight:800;color:#2d66a4;white-space:nowrap}
+
+/* BUTTONS */
+.btn{
+  height:46px;padding:0 22px;border-radius:8px;border:1px solid transparent; cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-size:13px;font-weight:800;white-space:nowrap; transition:.2s ease;
+}
+.btn.primary{background:var(--navy);color:#fff}
+.btn.primary:hover{background:#13418a}
+.btn.primary:active{background:#0d3268}
+.btn.primary:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.btn.secondary{background:#fff;color:var(--navy);border-color:#bcd0e1}
+.btn.secondary:hover{border-color:#8fb1cf}
+.btn.secondary:active{background:#f3f8fb}
+.btn.secondary:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.btn.small{height:37px;padding:0 15px;font-size:11px}
+
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#4ca6be}
+
+/* HEADER */
+header{
+  height:76px;border-bottom:1px solid #e3ebf2;background:#fff;position:sticky;top:0;z-index:20
+}
+.header-row{height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:11px;min-width:250px}
+.logo-mark{width:37px;height:37px;position:relative;transform:rotate(30deg)}
+.logo-mark:before,.logo-mark:after{
+  content:"";position:absolute;inset:2px;border:7px solid var(--navy);border-radius:5px
+}
+.logo-mark:after{inset:10px;border-width:5px;border-color:#64c8d8}
+.logo-text{font-size:15px;line-height:.95;font-weight:900;color:var(--navy)}
+.logo-text small{display:block;font-size:7px;letter-spacing:.08em;margin-top:5px;color:#547692}
+nav{display:flex;align-items:center;gap:34px;font-size:12px;font-weight:700;color:#35536f}
+nav a:hover{color:var(--navy)}
+nav a.active{color:var(--navy)}
+.nav-toggle{
+  display:none;width:40px;height:40px;border:1px solid var(--color-btn-secondary-border);
+  border-radius:9px;background:#fff;color:var(--navy);align-items:center;justify-content:center;
+  flex:none;cursor:pointer
+}
+.nav-toggle svg{width:20px;height:20px}
+.nav-toggle:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+header .btn{height:41px;padding:0 18px}
+header.scrolled{box-shadow:0 4px 16px rgba(11,47,104,.06)}
+
+/* FOOTER */
+footer{
+  margin-top:60px;background:linear-gradient(120deg,#082f68,#06295a);color:#fff;padding:43px 0 29px
+}
+.footer-grid{display:grid;grid-template-columns:1.15fr .8fr .8fr 1fr;gap:48px}
+footer .logo-text{color:#fff}
+footer p,footer li{font-size:10px;line-height:1.8;color:#c2d5e5}
+footer h3{font-size:12px;margin-bottom:11px}
+footer ul{list-style:none;padding:0;margin:0}
+.copy{margin-top:31px;padding-top:19px;border-top:1px solid rgba(255,255,255,.12);font-size:9px;color:#a9c4da}
+/* ==========================================================================
+   PAGE: HOME (index.html) — секции, специфичные для Главной страницы:
+   Hero, Преимущества, Поиск, Каталог, Продукты, О компании, Возможности,
+   Процесс/КП, Контакты.
+   ========================================================================== */
+
+/* HERO */
+.hero{
+  padding:22px 0 0;
+  background:#fff;
+}
+.hero-shell{
+  position:relative;
+  min-height:520px;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid #dfeaf2;
+  box-shadow:0 16px 40px rgba(23,61,104,.08);
+}
+.hero-slides{position:absolute;inset:0;z-index:0}
+.hero-slide{
+  position:absolute;inset:0;opacity:0;transition:opacity .8s ease;pointer-events:none;
+}
+.hero-slide.active{opacity:1}
+.hero-slide img{
+  width:100%;height:100%;object-fit:cover;object-position:center;
+  filter:saturate(.93) brightness(1.03) contrast(1.02);
+}
+.hero-slide svg{width:100%;height:100%;display:block}
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.91) 34%,rgba(255,255,255,.58) 52%,rgba(255,255,255,.12) 76%,rgba(255,255,255,0) 100%);
+}
+.hero-content{
+  position:relative;z-index:2;
+  min-height:520px;
+  display:flex;flex-direction:column;justify-content:center;
+  width:58%;
+  padding:64px 0 64px 28px;
+}
+.hero h1{
+  font-size:48px;line-height:1.06;color:var(--navy);font-weight:850;
+  letter-spacing:-.035em;max-width:640px
+}
+.hero p{margin-top:23px;max-width:575px;font-size:14px;line-height:1.72;color:#536f89}
+.hero-actions{display:flex;gap:14px;margin-top:28px}
+.hero-dots{
+  position:absolute;bottom:22px;left:28px;z-index:3;display:flex;gap:8px
+}
+.hero-dots button{
+  width:7px;height:7px;border-radius:50%;background:#d2e0eb;border:0;padding:0;cursor:pointer;
+}
+.hero-dots button.active{background:var(--navy)}
+.hero-dots button:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+
+/* BENEFITS */
+.benefits{background:var(--soft)}
+.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.benefit{
+  min-height:108px;padding:22px 24px;display:grid;grid-template-columns:39px 1fr;gap:14px;
+  border:1px solid #e6eef5;border-radius:13px;background:#ffffff;
+  box-shadow:0 8px 20px rgba(23,61,104,.06);
+  transition:transform .2s ease,box-shadow .2s ease
+}
+.benefit:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(23,61,104,.1)}
+.benefit-icon{
+  width:36px;height:36px;border:2px solid #2f70b8;border-radius:10px;color:#2f70b8;
+  display:grid;place-items:center;font-weight:900;font-size:11px
+}
+.benefit-icon svg{width:18px;height:18px;display:block}
+.benefit h3{font-size:13px;color:var(--navy);margin-bottom:6px}
+.benefit p{font-size:10px;line-height:1.55;color:#73879a}
+
+/* SEARCH */
+.search-section{padding:44px 0 24px}
+.search-card{
+  padding:28px 28px 23px;border:1px solid #e6eef5;border-radius:15px;
+  background:#ffffff;
+  box-shadow:0 10px 28px rgba(23,61,104,.08)
+}
+.search-card h2{font-size:26px;margin-bottom:20px}
+.search-row{display:grid;grid-template-columns:1.85fr .62fr .53fr .53fr 110px;gap:11px}
+.field{
+  height:45px;border:1px solid #d8e5ef;border-radius:8px;background:#fff;color:#7890a5;
+  display:flex;align-items:center;padding:0 13px;font-size:11px
+}
+.field-icon{width:14px;height:14px;flex:none;color:#8ea3b6}
+.search-note{margin-top:10px;font-size:10px;color:#8599aa}
+
+/* CATEGORIES */
+.category-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.category-card{
+  position:relative;min-height:190px;border:1px solid #e6eef5;border-radius:14px;
+  background:linear-gradient(135deg,#f7fbfe,#eef7fc);overflow:hidden;padding:25px;
+  box-shadow:0 10px 28px rgba(23,61,104,.08);
+  transition:transform .2s ease,box-shadow .2s ease
+}
+.category-card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(23,61,104,.12)}
+.category-card h3{font-size:20px;color:var(--navy);margin-bottom:11px}
+.category-card p{font-size:11px;line-height:1.55;color:#708499;max-width:295px}
+.category-card .btn{margin-top:20px}
+.category-card img{
+  position:absolute;right:0;bottom:0;width:46%;height:100%;object-fit:cover;
+  mix-blend-mode:multiply;opacity:.96
+}
+
+/* PRODUCTS */
+.products{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}
+.product{
+  min-height:267px;border:1px solid #e6eef5;border-radius:13px;padding:18px;background:#fff;
+  display:flex;flex-direction:column;
+  box-shadow:0 8px 20px rgba(23,61,104,.06);
+  transition:transform .2s ease,box-shadow .2s ease
+}
+.product:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(23,61,104,.1)}
+.formula{
+  height:73px;display:grid;place-items:center;color:#153e72;margin-bottom:6px;
+  border-radius:12px;
+  background:radial-gradient(120% 140% at 50% 15%,#ffffff 0%,#eef5fb 65%,#e1ecf6 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 -8px 16px rgba(23,61,104,.07)
+}
+.formula svg{filter:drop-shadow(0 3px 4px rgba(11,47,104,.3)) drop-shadow(0 -1px 0 rgba(255,255,255,.7))}
+.product h3{font-size:13px;color:var(--navy);margin:7px 0 10px}
+.meta{font-size:10px;line-height:1.7;color:#6f8498}
+.product .btn{margin-top:auto;align-self:flex-start}
+
+/* ABOUT */
+.about{
+  display:grid;grid-template-columns:.72fr 1.28fr;overflow:hidden;border-radius:15px;
+  border:1px solid #dbe7f0;background:#f7fbfe;
+  box-shadow:0 12px 32px rgba(23,61,104,.09)
+}
+.about-img{min-height:285px}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about-copy{padding:31px 35px}
+.about-copy h2{font-size:28px;margin:7px 0 13px}
+.about-copy p{font-size:11px;line-height:1.62;color:#687f94}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:25px}
+.stat strong{display:block;font-size:23px;color:var(--navy)}
+.stat span{font-size:9px;color:#74889b}
+
+/* CAPABILITIES */
+.cap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.cap{
+  min-height:170px;border:1px solid #e6eef5;border-radius:13px;background:#ffffff;
+  padding:20px; position:relative; overflow:hidden;
+  box-shadow:0 10px 28px rgba(23,61,104,.08);
+  transition:transform .2s ease,box-shadow .2s ease
+}
+.cap:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(23,61,104,.12)}
+.cap-thumb{
+  position:absolute; right:10px; top:10px; width:68px; height:54px; border-radius:10px;
+  overflow:hidden; border:1px solid #dfe9f1; background:#eef6fb
+}
+.cap-thumb img{width:100%;height:100%;object-fit:cover}
+.cap-icon{font-size:22px;color:#2d6eb6}
+.cap-icon svg{width:24px;height:24px;display:block}
+.cap h3{font-size:13px;color:var(--navy);margin:10px 0 7px; max-width:120px}
+.cap p{font-size:10px;line-height:1.5;color:#718598; max-width:150px}
+
+/* PROCESS / COMMERCIAL OFFER */
+.process{display:grid;grid-template-columns:repeat(8,1fr);gap:9px}
+.step{
+  min-height:145px;border:1px solid #e6eef5;border-radius:13px;background:#ffffff;
+  padding:15px 11px;
+  box-shadow:0 8px 20px rgba(23,61,104,.06);
+  transition:transform .2s ease,box-shadow .2s ease
+}
+.step:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(23,61,104,.1)}
+.step .num{font-size:11px;font-weight:900;color:#2a73b9;margin-bottom:17px}
+.step h3{font-size:10px;color:var(--navy);margin-bottom:7px}
+.step p{font-size:8px;line-height:1.45;color:#75899b}
+
+/* CONTACTS */
+.contact{
+  display:grid;grid-template-columns:.86fr .78fr 1.26fr;border:1px solid #dbe7f0;
+  border-radius:14px;overflow:hidden;background:#f8fbfd;
+  box-shadow:0 12px 32px rgba(23,61,104,.09)
+}
+.contact-copy,.contact-info{padding:29px}
+.contact-copy{border-right:1px solid #dce6ee}
+.contact-copy h2{font-size:27px;margin:8px 0 12px}
+.contact-copy p{font-size:10px;line-height:1.6;color:#73879a;margin-bottom:19px}
+.contact-info{font-size:13px;line-height:1.7;color:#586f84}
+.c-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:19px}
+.c-row:last-child{margin-bottom:0}
+.c-icon{width:20px;height:20px;flex:none;color:#2d6bb3;margin-top:2px}
+.c-row:last-child .c-icon{margin-top:5px}
+.map{min-height:260px;background:#eef4ef;position:relative;overflow:hidden}
+.map svg{width:100%;height:100%;display:block}
+/* ==========================================================================
+   RESPONSIVE — breakpoints. Текущий milestone — финализация Desktop
+   (1440 / 1280 / 1024). Ниже сохранён утверждённый tablet-breakpoint
+   (≤1000px) без изменений, плюс дополнительный safety-breakpoint для узких
+   мобильных экранов (≤640px), чтобы страница не ломалась и не появлялся
+   горизонтальный скролл — это не влияет на desktop-вид.
+   ========================================================================== */
+
+@media(max-width:1000px){
+  .nav-toggle{display:flex}
+  nav{
+    position:absolute;top:76px;left:0;right:0;z-index:19;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:#fff;border-bottom:1px solid var(--color-border-header);
+    box-shadow:0 14px 28px rgba(23,61,104,.1);
+    opacity:0;pointer-events:none;transform:translateY(-6px);
+    transition:opacity .18s ease,transform .18s ease
+  }
+  nav.nav-open{opacity:1;pointer-events:auto;transform:translateY(0)}
+  nav a{padding:14px 24px;border-bottom:1px solid var(--color-border-header)}
+  nav a:last-child{border-bottom:none}
+  .wrap{width:min(1260px,calc(100% - 30px))}
+  .hero-content{width:100%;padding:46px 24px;min-height:500px}
+  .hero-overlay{background:linear-gradient(90deg,rgba(255,255,255,.97),rgba(255,255,255,.84) 70%,rgba(255,255,255,.55))}
+  .about,.contact{grid-template-columns:1fr}
+  .products,.process,.cap-grid,.benefit-grid{grid-template-columns:repeat(2,1fr)}
+  .search-row{grid-template-columns:1fr 1fr}
+  .search-row .field:first-child{grid-column:1/-1}
+}
+
+/* Safety breakpoint for narrow mobile screens (not part of current milestone,
+   included so the page doesn't break/overflow on phones). */
+@media(max-width:640px){
+  .hero h1{font-size:32px;max-width:100%}
+  .hero p{font-size:13px}
+  .hero-actions{flex-wrap:wrap}
+  .products,.process,.cap-grid,.benefit-grid,.category-grid{grid-template-columns:1fr}
+  .search-row{grid-template-columns:1fr}
+  .search-row .field:first-child{grid-column:auto}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .header-row{gap:8px}
+  .header-row .btn{height:36px;padding:0 12px;font-size:10px;font-weight:700}
+  .logo{min-width:0;gap:8px}
+  .logo-mark{width:30px;height:30px}
+  .logo-text{font-size:12px}
+  .logo-text small{font-size:6px}
+  .nav-toggle{width:36px;height:36px}
+  .nav-toggle svg{width:18px;height:18px}
+  /* Длинные заголовки секций переносятся, а не растягивают страницу */
+  .section-title{flex-wrap:wrap;row-gap:8px}
+  .section-title h2{white-space:normal}
+  .section-link{margin-left:0}
+  .category-card{padding:20px 18px 22px}
+  .category-card h3,.category-card p{max-width:calc(100% - 78px)}
+  .category-card img{
+    top:20px;right:20px;bottom:auto;left:auto;
+    width:56px;height:56px;border-radius:12px;object-fit:cover
+  }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-row">
+    <a class="logo" href="#">
+      <span class="logo-mark"></span>
+      <span class="logo-text">НОВЫЕ<br>ТЕХНОЛОГИИ<small>МАЛОТОННАЖНАЯ ХИМИЯ</small></span>
+    </a>
+    <nav id="primary-nav">
+      <a href="#about">О компании</a>
+      <a href="#catalog">Каталог</a>
+      <a href="#offer">Коммерческое предложение</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a href="#contacts" class="btn primary">Запросить предложение</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Открыть меню">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-shell">
+        <div class="hero-slides">
+          <div class="hero-slide active"><img src="assets/img/hero/hero-mesh.webp" alt="" role="presentation"></div>
+          <div class="hero-slide"><img src="assets/img/hero/hero-chain.webp" alt="" role="presentation"></div>
+          <div class="hero-slide"><img src="assets/img/hero/hero-dna.webp" alt="" role="presentation"></div>
+        </div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+          <h1>Малотоннажная химия<br>для промышленности,<br>науки и новых разработок</h1>
+          <p>Поставляем реактивы, полупродукты и тонкие химические вещества для синтеза, исследований и производства. Работаем с более чем 200 компонентами, подбираем аналоги и разрабатываем решения под ваши задачи.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#catalog">Перейти в каталог →</a>
+            <a class="btn secondary" href="#contacts">Запросить предложение</a>
+          </div>
+        </div>
+
+        <div class="hero-dots">
+          <button class="active" aria-label="Слайд 1"></button>
+          <button aria-label="Слайд 2"></button>
+          <button aria-label="Слайд 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <div class="wrap benefit-grid">
+      <div class="benefit"><div class="benefit-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 7.5v9L12 21 4 16.5v-9Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><div><h3>Органическая химия</h3><p>Широкий ассортимент органических соединений и реагентов.</p></div></div>
+      <div class="benefit"><div class="benefit-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 12l8 10 8-10Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 12h16M12 2v20" stroke="currentColor" stroke-width="1.1" opacity=".6"/></svg></div><div><h3>Неорганическая химия</h3><p>Кислоты, основания, соли, оксиды и специализированные вещества.</p></div></div>
+      <div class="benefit"><div class="benefit-icon">CAS</div><div><h3>Подбор по CAS</h3><p>Поиск по названию, формуле или CAS. Подбор аналогов и замена компонентов.</p></div></div>
+      <div class="benefit"><div class="benefit-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="12" height="9" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M14 10h4l3 3v3h-7v-6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="1.6" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="17.5" cy="18" r="1.6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></div><div><h3>Надёжные поставки</h3><p>Собственное производство и проверенные партнёры. Стабильные поставки по РФ и СНГ.</p></div></div>
+    </div>
+  </section>
+
+  <section class="search-section">
+    <div class="wrap">
+      <div class="search-card">
+        <h2>Найти реактив</h2>
+        <div class="search-row">
+          <div class="field"><svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>&nbsp; Название / CAS / Формула</div>
+          <div class="field">Квалификация · Любая</div>
+          <div class="field">Фасовка · Любая</div>
+          <div class="field">Упаковка · Любая</div>
+          <button class="btn primary">Найти</button>
+        </div>
+        <div class="search-note">Например: ацетон, 7732-18-5, C₂H₆O</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalog" class="section" style="padding-top:28px">
+    <div class="wrap">
+      <div class="section-title"><h2>Каталог реагентов</h2><a class="section-link" href="#">Перейти в каталог →</a></div>
+      <div class="category-grid">
+        <article class="category-card">
+          <h3>Органическая химия</h3>
+          <p>Растворители, мономеры, строительные блоки, лиганды, специальные реагенты.</p>
+          <a class="btn secondary small" href="#">Смотреть раздел</a>
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MjAgNTYwIj4KICA8ZGVmcz4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0ic3BoZXJlVGVhbCIgY3g9IjM1JSIgY3k9IjMwJSIgcj0iNzUlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VhZmJmZiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjQ1JSIgc3RvcC1jb2xvcj0iIzdmZDhlNiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyZjlmYjgiLz4KICAgIDwvcmFkaWFsR3JhZGllbnQ+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9InNwaGVyZU5hdnkiIGN4PSIzNSUiIGN5PSIzMCUiIHI9Ijc1JSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNkY2VjZmYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI0NSUiIHN0b3AtY29sb3I9IiM2ZmEzZTAiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMWM0YzhmIi8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNjIwIiBoZWlnaHQ9IjU2MCIgZmlsbD0iI2ZmZmZmZiIvPgoKICA8IS0tIGZhaW50IGJvbmQgbmV0d29yayBpbiBiYWNrZ3JvdW5kIC0tPgogIDxnIHN0cm9rZT0iI2RiZWVmNCIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIiBvcGFjaXR5PSIuNyI+CiAgICA8cGF0aCBkPSJNNDAgNDcwIEwxNDAgNDIwIEwxNDAgMzQwIi8+CiAgICA8cGF0aCBkPSJNNTYwIDkwIEw0NzAgMTQwIEw0NzAgMjIwIi8+CiAgICA8Y2lyY2xlIGN4PSI0MCIgY3k9IjQ3MCIgcj0iMTAiIGZpbGw9IiNlYWZiZmYiLz4KICAgIDxjaXJjbGUgY3g9IjE0MCIgY3k9IjQyMCIgcj0iMTQiIGZpbGw9IiNlYWZiZmYiLz4KICAgIDxjaXJjbGUgY3g9IjE0MCIgY3k9IjM0MCIgcj0iMTAiIGZpbGw9IiNlYWZiZmYiLz4KICAgIDxjaXJjbGUgY3g9IjU2MCIgY3k9IjkwIiByPSIxMCIgZmlsbD0iI2VhZmJmZiIvPgogICAgPGNpcmNsZSBjeD0iNDcwIiBjeT0iMTQwIiByPSIxNCIgZmlsbD0iI2VhZmJmZiIvPgogICAgPGNpcmNsZSBjeD0iNDcwIiBjeT0iMjIwIiByPSIxMCIgZmlsbD0iI2VhZmJmZiIvPgogIDwvZz4KCiAgPCEtLSBtYWluIG1vbGVjdWxlOiBmdXNlZCByaW5nICsgYnJhbmNoIGNoYWluIC0tPgogIDxnIHN0cm9rZT0iIzBiMmY2OCIgc3Ryb2tlLXdpZHRoPSI2IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiPgogICAgPCEtLSBoZXhhZ29uIHJpbmcgLS0+CiAgICA8cGF0aCBkPSJNMjM1IDE3NSBMMzQwIDEyMCBMNDQ1IDE3NSBMNDQ1IDI4NSBMMzQwIDM0MCBMMjM1IDI4NSBaIi8+CiAgICA8IS0tIGJyYW5jaCBjaGFpbiBnb2luZyB1cC1yaWdodCAtLT4KICAgIDxwYXRoIGQ9Ik00NDUgMTc1IEw1MjUgMTMwIi8+CiAgICA8cGF0aCBkPSJNNTI1IDEzMCBMNTI1IDYwIi8+CiAgICA8cGF0aCBkPSJNNTI1IDEzMCBMNjAwIDE3NSIvPgogICAgPCEtLSBicmFuY2ggY2hhaW4gZ29pbmcgZG93bi1sZWZ0IC0tPgogICAgPHBhdGggZD0iTTIzNSAyODUgTDE1NSAzMzAiLz4KICAgIDxwYXRoIGQ9Ik0xNTUgMzMwIEwxNTUgNDAwIi8+CiAgICA8cGF0aCBkPSJNMTU1IDMzMCBMODAgMjg1Ii8+CiAgICA8IS0tIGxvd2VyIGJyYW5jaCAtLT4KICAgIDxwYXRoIGQ9Ik0zNDAgMzQwIEwzNDAgNDE1Ii8+CiAgICA8cGF0aCBkPSJNMzQwIDQxNSBMNDAwIDQ2MCIvPgogICAgPHBhdGggZD0iTTM0MCA0MTUgTDI4MCA0NjAiLz4KICA8L2c+CgogIDwhLS0gYXRvbXMgKHNwaGVyZXMpIC0tPgogIDxnPgogICAgPGNpcmNsZSBjeD0iMjM1IiBjeT0iMTc1IiByPSIxOSIgZmlsbD0idXJsKCNzcGhlcmVUZWFsKSIvPgogICAgPGNpcmNsZSBjeD0iMzQwIiBjeT0iMTIwIiByPSIyNCIgZmlsbD0idXJsKCNzcGhlcmVOYXZ5KSIvPgogICAgPGNpcmNsZSBjeD0iNDQ1IiBjeT0iMTc1IiByPSIxOSIgZmlsbD0idXJsKCNzcGhlcmVUZWFsKSIvPgogICAgPGNpcmNsZSBjeD0iNDQ1IiBjeT0iMjg1IiByPSIxOSIgZmlsbD0idXJsKCNzcGhlcmVUZWFsKSIvPgogICAgPGNpcmNsZSBjeD0iMzQwIiBjeT0iMzQwIiByPSIyNCIgZmlsbD0idXJsKCNzcGhlcmVOYXZ5KSIvPgogICAgPGNpcmNsZSBjeD0iMjM1IiBjeT0iMjg1IiByPSIxOSIgZmlsbD0idXJsKCNzcGhlcmVUZWFsKSIvPgoKICAgIDxjaXJjbGUgY3g9IjUyNSIgY3k9IjEzMCIgcj0iMTYiIGZpbGw9InVybCgjc3BoZXJlTmF2eSkiLz4KICAgIDxjaXJjbGUgY3g9IjUyNSIgY3k9IjYwIiAgcj0iMTMiIGZpbGw9InVybCgjc3BoZXJlVGVhbCkiLz4KICAgIDxjaXJjbGUgY3g9IjYwMCIgY3k9IjE3NSIgcj0iMTMiIGZpbGw9InVybCgjc3BoZXJlVGVhbCkiLz4KCiAgICA8Y2lyY2xlIGN4PSIxNTUiIGN5PSIzMzAiIHI9IjE2IiBmaWxsPSJ1cmwoI3NwaGVyZU5hdnkpIi8+CiAgICA8Y2lyY2xlIGN4PSIxNTUiIGN5PSI0MDAiIHI9IjEzIiBmaWxsPSJ1cmwoI3NwaGVyZVRlYWwpIi8+CiAgICA8Y2lyY2xlIGN4PSI4MCIgIGN5PSIyODUiIHI9IjEzIiBmaWxsPSJ1cmwoI3NwaGVyZVRlYWwpIi8+CgogICAgPGNpcmNsZSBjeD0iMzQwIiBjeT0iNDE1IiByPSIxNiIgZmlsbD0idXJsKCNzcGhlcmVOYXZ5KSIvPgogICAgPGNpcmNsZSBjeD0iNDAwIiBjeT0iNDYwIiByPSIxMyIgZmlsbD0idXJsKCNzcGhlcmVUZWFsKSIvPgogICAgPGNpcmNsZSBjeD0iMjgwIiBjeT0iNDYwIiByPSIxMyIgZmlsbD0idXJsKCNzcGhlcmVUZWFsKSIvPgogIDwvZz4KCiAgPCEtLSBzcGVjdWxhciBoaWdobGlnaHRzIC0tPgogIDxnIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9Ii41NSI+CiAgICA8Y2lyY2xlIGN4PSIzMzAiIGN5PSIxMTIiIHI9IjYiLz4KICAgIDxjaXJjbGUgY3g9IjIyOCIgY3k9IjE2OCIgcj0iNSIvPgogICAgPGNpcmNsZSBjeD0iNDM4IiBjeT0iMTY4IiByPSI1Ii8+CiAgPC9nPgo8L3N2Zz4K" alt="">
+        </article>
+        <article class="category-card">
+          <h3>Неорганическая химия</h3>
+          <p>Кислоты, щёлочи, соли, оксиды, катализаторы, индикаторы и другие неорганические вещества.</p>
+          <a class="btn secondary small" href="#">Смотреть раздел</a>
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MjAgNTYwIj4KICA8ZGVmcz4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0iaW9uQmlnIiBjeD0iMzUlIiBjeT0iMzAlIiByPSI3NSUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZWFmM2ZmIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iNDUlIiBzdG9wLWNvbG9yPSIjNWY5M2Q2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzE3M2U3OCIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICAgIDxyYWRpYWxHcmFkaWVudCBpZD0iaW9uU21hbGwiIGN4PSIzNSUiIGN5PSIzMCUiIHI9Ijc1JSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNlYWZjZmYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSI0NSUiIHN0b3AtY29sb3I9IiM3ZmQ2ZTYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMmY5N2IwIi8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNjIwIiBoZWlnaHQ9IjU2MCIgZmlsbD0iI2ZmZmZmZiIvPgogIDxnIHN0cm9rZT0iIzBiMmY2OCIgc3Ryb2tlLXdpZHRoPSI0LjUiIG9wYWNpdHk9Ii44NSI+CiAgICA8bGluZSB4MT0iNzAuMCIgeTE9IjYwLjAiIHgyPSIxOTAuMCIgeTI9IjYwLjAiLz4KICAgIDxsaW5lIHgxPSI3MC4wIiB5MT0iNjAuMCIgeDI9Ijg4LjkiIHkyPSIxNjUuMCIvPgogICAgPGxpbmUgeDE9IjE5MC4wIiB5MT0iNjAuMCIgeDI9IjMxMC4wIiB5Mj0iNjAuMCIvPgogICAgPGxpbmUgeDE9IjE5MC4wIiB5MT0iNjAuMCIgeDI9IjIwOC45IiB5Mj0iMTY1LjAiLz4KICAgIDxsaW5lIHgxPSIzMTAuMCIgeTE9IjYwLjAiIHgyPSI0MzAuMCIgeTI9IjYwLjAiLz4KICAgIDxsaW5lIHgxPSIzMTAuMCIgeTE9IjYwLjAiIHgyPSIzMjguOSIgeTI9IjE2NS4wIi8+CiAgICA8bGluZSB4MT0iNDMwLjAiIHkxPSI2MC4wIiB4Mj0iNTUwLjAiIHkyPSI2MC4wIi8+CiAgICA8bGluZSB4MT0iNDMwLjAiIHkxPSI2MC4wIiB4Mj0iNDQ4LjkiIHkyPSIxNjUuMCIvPgogICAgPGxpbmUgeDE9IjU1MC4wIiB5MT0iNjAuMCIgeDI9IjU2OC45IiB5Mj0iMTY1LjAiLz4KICAgIDxsaW5lIHgxPSI4OC45IiB5MT0iMTY1LjAiIHgyPSIyMDguOSIgeTI9IjE2NS4wIi8+CiAgICA8bGluZSB4MT0iODguOSIgeTE9IjE2NS4wIiB4Mj0iNzAuMCIgeTI9IjI3MC4wIi8+CiAgICA8bGluZSB4MT0iMjA4LjkiIHkxPSIxNjUuMCIgeDI9IjMyOC45IiB5Mj0iMTY1LjAiLz4KICAgIDxsaW5lIHgxPSIyMDguOSIgeTE9IjE2NS4wIiB4Mj0iMTkwLjAiIHkyPSIyNzAuMCIvPgogICAgPGxpbmUgeDE9IjMyOC45IiB5MT0iMTY1LjAiIHgyPSI0NDguOSIgeTI9IjE2NS4wIi8+CiAgICA8bGluZSB4MT0iMzI4LjkiIHkxPSIxNjUuMCIgeDI9IjMxMC4wIiB5Mj0iMjcwLjAiLz4KICAgIDxsaW5lIHgxPSI0NDguOSIgeTE9IjE2NS4wIiB4Mj0iNTY4LjkiIHkyPSIxNjUuMCIvPgogICAgPGxpbmUgeDE9IjQ0OC45IiB5MT0iMTY1LjAiIHgyPSI0MzAuMCIgeTI9IjI3MC4wIi8+CiAgICA8bGluZSB4MT0iNTY4LjkiIHkxPSIxNjUuMCIgeDI9IjU1MC4wIiB5Mj0iMjcwLjAiLz4KICAgIDxsaW5lIHgxPSI3MC4wIiB5MT0iMjcwLjAiIHgyPSIxOTAuMCIgeTI9IjI3MC4wIi8+CiAgICA8bGluZSB4MT0iNzAuMCIgeTE9IjI3MC4wIiB4Mj0iODguOSIgeTI9IjM3NS4wIi8+CiAgICA8bGluZSB4MT0iMTkwLjAiIHkxPSIyNzAuMCIgeDI9IjMxMC4wIiB5Mj0iMjcwLjAiLz4KICAgIDxsaW5lIHgxPSIxOTAuMCIgeTE9IjI3MC4wIiB4Mj0iMjA4LjkiIHkyPSIzNzUuMCIvPgogICAgPGxpbmUgeDE9IjMxMC4wIiB5MT0iMjcwLjAiIHgyPSI0MzAuMCIgeTI9IjI3MC4wIi8+CiAgICA8bGluZSB4MT0iMzEwLjAiIHkxPSIyNzAuMCIgeDI9IjMyOC45IiB5Mj0iMzc1LjAiLz4KICAgIDxsaW5lIHgxPSI0MzAuMCIgeTE9IjI3MC4wIiB4Mj0iNTUwLjAiIHkyPSIyNzAuMCIvPgogICAgPGxpbmUgeDE9IjQzMC4wIiB5MT0iMjcwLjAiIHgyPSI0NDguOSIgeTI9IjM3NS4wIi8+CiAgICA8bGluZSB4MT0iNTUwLjAiIHkxPSIyNzAuMCIgeDI9IjU2OC45IiB5Mj0iMzc1LjAiLz4KICAgIDxsaW5lIHgxPSI4OC45IiB5MT0iMzc1LjAiIHgyPSIyMDguOSIgeTI9IjM3NS4wIi8+CiAgICA8bGluZSB4MT0iODguOSIgeTE9IjM3NS4wIiB4Mj0iNzAuMCIgeTI9IjQ4MC4wIi8+CiAgICA8bGluZSB4MT0iMjA4LjkiIHkxPSIzNzUuMCIgeDI9IjMyOC45IiB5Mj0iMzc1LjAiLz4KICAgIDxsaW5lIHgxPSIyMDguOSIgeTE9IjM3NS4wIiB4Mj0iMTkwLjAiIHkyPSI0ODAuMCIvPgogICAgPGxpbmUgeDE9IjMyOC45IiB5MT0iMzc1LjAiIHgyPSI0NDguOSIgeTI9IjM3NS4wIi8+CiAgICA8bGluZSB4MT0iMzI4LjkiIHkxPSIzNzUuMCIgeDI9IjMxMC4wIiB5Mj0iNDgwLjAiLz4KICAgIDxsaW5lIHgxPSI0NDguOSIgeTE9IjM3NS4wIiB4Mj0iNTY4LjkiIHkyPSIzNzUuMCIvPgogICAgPGxpbmUgeDE9IjQ0OC45IiB5MT0iMzc1LjAiIHgyPSI0MzAuMCIgeTI9IjQ4MC4wIi8+CiAgICA8bGluZSB4MT0iNTY4LjkiIHkxPSIzNzUuMCIgeDI9IjU1MC4wIiB5Mj0iNDgwLjAiLz4KICAgIDxsaW5lIHgxPSI3MC4wIiB5MT0iNDgwLjAiIHgyPSIxOTAuMCIgeTI9IjQ4MC4wIi8+CiAgICA8bGluZSB4MT0iMTkwLjAiIHkxPSI0ODAuMCIgeDI9IjMxMC4wIiB5Mj0iNDgwLjAiLz4KICAgIDxsaW5lIHgxPSIzMTAuMCIgeTE9IjQ4MC4wIiB4Mj0iNDMwLjAiIHkyPSI0ODAuMCIvPgogICAgPGxpbmUgeDE9IjQzMC4wIiB5MT0iNDgwLjAiIHgyPSI1NTAuMCIgeTI9IjQ4MC4wIi8+CiAgPC9nPgogIDxnPgogICAgPGNpcmNsZSBjeD0iNzAuMCIgY3k9IjYwLjAiIHI9IjIyIiBmaWxsPSJ1cmwoI2lvbkJpZykiLz4KICAgIDxjaXJjbGUgY3g9IjE5MC4wIiBjeT0iNjAuMCIgcj0iMTQiIGZpbGw9InVybCgjaW9uU21hbGwpIi8+CiAgICA8Y2lyY2xlIGN4PSIzMTAuMCIgY3k9IjYwLjAiIHI9IjIyIiBmaWxsPSJ1cmwoI2lvbkJpZykiLz4KICAgIDxjaXJjbGUgY3g9IjQzMC4wIiBjeT0iNjAuMCIgcj0iMTQiIGZpbGw9InVybCgjaW9uU21hbGwpIi8+CiAgICA8Y2lyY2xlIGN4PSI1NTAuMCIgY3k9IjYwLjAiIHI9IjIyIiBmaWxsPSJ1cmwoI2lvbkJpZykiLz4KICAgIDxjaXJjbGUgY3g9Ijg4LjkiIGN5PSIxNjUuMCIgcj0iMTQiIGZpbGw9InVybCgjaW9uU21hbGwpIi8+CiAgICA8Y2lyY2xlIGN4PSIyMDguOSIgY3k9IjE2NS4wIiByPSIyMiIgZmlsbD0idXJsKCNpb25CaWcpIi8+CiAgICA8Y2lyY2xlIGN4PSIzMjguOSIgY3k9IjE2NS4wIiByPSIxNCIgZmlsbD0idXJsKCNpb25TbWFsbCkiLz4KICAgIDxjaXJjbGUgY3g9IjQ0OC45IiBjeT0iMTY1LjAiIHI9IjIyIiBmaWxsPSJ1cmwoI2lvbkJpZykiLz4KICAgIDxjaXJjbGUgY3g9IjU2OC45IiBjeT0iMTY1LjAiIHI9IjE0IiBmaWxsPSJ1cmwoI2lvblNtYWxsKSIvPgogICAgPGNpcmNsZSBjeD0iNzAuMCIgY3k9IjI3MC4wIiByPSIyMiIgZmlsbD0idXJsKCNpb25CaWcpIi8+CiAgICA8Y2lyY2xlIGN4PSIxOTAuMCIgY3k9IjI3MC4wIiByPSIxNCIgZmlsbD0idXJsKCNpb25TbWFsbCkiLz4KICAgIDxjaXJjbGUgY3g9IjMxMC4wIiBjeT0iMjcwLjAiIHI9IjIyIiBmaWxsPSJ1cmwoI2lvbkJpZykiLz4KICAgIDxjaXJjbGUgY3g9IjQzMC4wIiBjeT0iMjcwLjAiIHI9IjE0IiBmaWxsPSJ1cmwoI2lvblNtYWxsKSIvPgogICAgPGNpcmNsZSBjeD0iNTUwLjAiIGN5PSIyNzAuMCIgcj0iMjIiIGZpbGw9InVybCgjaW9uQmlnKSIvPgogICAgPGNpcmNsZSBjeD0iODguOSIgY3k9IjM3NS4wIiByPSIxNCIgZmlsbD0idXJsKCNpb25TbWFsbCkiLz4KICAgIDxjaXJjbGUgY3g9IjIwOC45IiBjeT0iMzc1LjAiIHI9IjIyIiBmaWxsPSJ1cmwoI2lvbkJpZykiLz4KICAgIDxjaXJjbGUgY3g9IjMyOC45IiBjeT0iMzc1LjAiIHI9IjE0IiBmaWxsPSJ1cmwoI2lvblNtYWxsKSIvPgogICAgPGNpcmNsZSBjeD0iNDQ4LjkiIGN5PSIzNzUuMCIgcj0iMjIiIGZpbGw9InVybCgjaW9uQmlnKSIvPgogICAgPGNpcmNsZSBjeD0iNTY4LjkiIGN5PSIzNzUuMCIgcj0iMTQiIGZpbGw9InVybCgjaW9uU21hbGwpIi8+CiAgICA8Y2lyY2xlIGN4PSI3MC4wIiBjeT0iNDgwLjAiIHI9IjIyIiBmaWxsPSJ1cmwoI2lvbkJpZykiLz4KICAgIDxjaXJjbGUgY3g9IjE5MC4wIiBjeT0iNDgwLjAiIHI9IjE0IiBmaWxsPSJ1cmwoI2lvblNtYWxsKSIvPgogICAgPGNpcmNsZSBjeD0iMzEwLjAiIGN5PSI0ODAuMCIgcj0iMjIiIGZpbGw9InVybCgjaW9uQmlnKSIvPgogICAgPGNpcmNsZSBjeD0iNDMwLjAiIGN5PSI0ODAuMCIgcj0iMTQiIGZpbGw9InVybCgjaW9uU21hbGwpIi8+CiAgICA8Y2lyY2xlIGN4PSI1NTAuMCIgY3k9IjQ4MC4wIiByPSIyMiIgZmlsbD0idXJsKCNpb25CaWcpIi8+CiAgPC9nPgogIDxnIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9Ii41Ij4KICAgIDxjaXJjbGUgY3g9IjY0LjAiIGN5PSI1My4wIiByPSI1Ii8+CiAgICA8Y2lyY2xlIGN4PSIzMDQuMCIgY3k9IjUzLjAiIHI9IjUiLz4KICAgIDxjaXJjbGUgY3g9IjU0NC4wIiBjeT0iNTMuMCIgcj0iNSIvPgogICAgPGNpcmNsZSBjeD0iMjAyLjkiIGN5PSIxNTguMCIgcj0iNSIvPgogICAgPGNpcmNsZSBjeD0iNDQyLjkiIGN5PSIxNTguMCIgcj0iNSIvPgogICAgPGNpcmNsZSBjeD0iNjQuMCIgY3k9IjI2My4wIiByPSI1Ii8+CiAgICA8Y2lyY2xlIGN4PSIzMDQuMCIgY3k9IjI2My4wIiByPSI1Ii8+CiAgICA8Y2lyY2xlIGN4PSI1NDQuMCIgY3k9IjI2My4wIiByPSI1Ii8+CiAgICA8Y2lyY2xlIGN4PSIyMDIuOSIgY3k9IjM2OC4wIiByPSI1Ii8+CiAgICA8Y2lyY2xlIGN4PSI0NDIuOSIgY3k9IjM2OC4wIiByPSI1Ii8+CiAgICA8Y2lyY2xlIGN4PSI2NC4wIiBjeT0iNDczLjAiIHI9IjUiLz4KICAgIDxjaXJjbGUgY3g9IjMwNC4wIiBjeT0iNDczLjAiIHI9IjUiLz4KICAgIDxjaXJjbGUgY3g9IjU0NC4wIiBjeT0iNDczLjAiIHI9IjUiLz4KICA8L2c+Cjwvc3ZnPg==" alt="">
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:20px">
+    <div class="wrap">
+      <div class="section-title"><h2>Популярные продукты</h2><a class="section-link" href="#">Смотреть все продукты →</a></div>
+      <div class="products">
+        <article class="product">
+          <div class="formula"><svg width="118" height="68"><polyline points="7,46 30,31 54,46 77,31 103,46" fill="none" stroke="#153E72" stroke-width="2"/><text x="103" y="32" font-size="15" fill="#153E72">Br</text></svg></div>
+          <h3>1-Бромбутан</h3><div class="meta">CAS: 109-65-9<br>Формула: C4H9Br<br>Квалификация: ч.<br>Фасовка: 1 л, 5 л, 25 л</div>
+          <a class="btn secondary small" href="#">Подробнее</a>
+        </article>
+        <article class="product">
+          <div class="formula"><svg width="118" height="68"><polygon points="28,36 42,12 70,12 84,36 70,60 42,60" fill="none" stroke="#153E72" stroke-width="2"/><polyline points="84,36 103,24" fill="none" stroke="#153E72" stroke-width="2"/><text x="104" y="22" font-size="15" fill="#153E72">Br</text></svg></div>
+          <h3>1-Бромнафталин</h3><div class="meta">CAS: 90-11-9<br>Формула: C10H7Br<br>Квалификация: ч.д.а.<br>Фасовка: 25 г, 100 г, 1 кг</div>
+          <a class="btn secondary small" href="#">Подробнее</a>
+        </article>
+        <article class="product">
+          <div class="formula"><svg width="118" height="68"><polyline points="7,46 31,31 55,46 80,31" fill="none" stroke="#153E72" stroke-width="2"/><text x="83" y="34" font-size="15" fill="#153E72">Cl</text></svg></div>
+          <h3>1-Хлорбутан</h3><div class="meta">CAS: 109-69-3<br>Формула: C4H9Cl<br>Квалификация: ч.<br>Фасовка: 1 л, 5 л, 25 л</div>
+          <a class="btn secondary small" href="#">Подробнее</a>
+        </article>
+        <article class="product">
+          <div class="formula"><svg width="118" height="68"><polygon points="25,36 40,12 68,12 82,36 68,60 40,60" fill="none" stroke="#153E72" stroke-width="2"/><line x1="82" y1="36" x2="103" y2="24" stroke="#153E72" stroke-width="2"/><text x="103" y="23" font-size="13" fill="#153E72">OH</text></svg></div>
+          <h3>Бензиловый спирт</h3><div class="meta">CAS: 100-51-6<br>Формула: C7H8O<br>Квалификация: ч.д.а.<br>Фасовка: 1 л, 5 л, 20 л</div>
+          <a class="btn secondary small" href="#">Подробнее</a>
+        </article>
+        <article class="product">
+          <div class="formula"><svg width="118" height="68"><polygon points="34,36 48,12 76,12 90,36 76,60 48,60" fill="none" stroke="#153E72" stroke-width="2"/><text x="62" y="8" font-size="13" fill="#153E72">N</text></svg></div>
+          <h3>Пиридин</h3><div class="meta">CAS: 110-86-1<br>Формула: C5H5N<br>Квалификация: ч.д.а.<br>Фасовка: 500 мл, 1 л, 5 л</div>
+          <a class="btn secondary small" href="#">Подробнее</a>
+        </article>
+      </div>
+      <div style="text-align:center;margin-top:18px"><a class="btn secondary small" href="#">Смотреть больше продуктов</a></div>
+    </div>
+  </section>
+
+  <section id="about" class="section" style="padding-top:16px">
+    <div class="wrap">
+      <div class="about">
+        <div class="about-img"><img src="assets/img/about/lab-bench.webp" alt="Химическая лаборатория" loading="lazy"></div>
+        <div class="about-copy">
+          <div class="eyebrow">О компании</div>
+          <h2>Компетенции и качество на каждом этапе</h2>
+          <p>ООО «Новые технологии» — российская химическая компания, специализирующаяся на поставках и производстве малотоннажной химической продукции.</p>
+          <p style="margin-top:8px">Мы работаем с научными центрами, университетами, инжиниринговыми компаниями и промышленными предприятиями, предлагая надёжные решения для ваших задач.</p>
+          <div class="stats">
+            <div class="stat"><strong>15+</strong><span>лет на рынке</span></div>
+            <div class="stat"><strong>200+</strong><span>позиций в каталоге</span></div>
+            <div class="stat"><strong>800+</strong><span>клиентов</span></div>
+            <div class="stat"><strong>5000+</strong><span>успешных поставок</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-title"><h2>Производство и возможности</h2></div>
+      <div class="cap-grid">
+        <div class="cap">
+          <div class="cap-thumb"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMjYwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmdQIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNlZWY2ZmIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZGNlY2Y2Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJ0YW5rUCIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjN2ZkNmU2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzJkNmJiMyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyNjAiIGZpbGw9InVybCgjYmdQKSIvPgogIDxnIHN0cm9rZT0iIzBiMmY2OCIgc3Ryb2tlLXdpZHRoPSI2IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgPHJlY3QgeD0iOTUiIHk9IjgwIiB3aWR0aD0iOTAiIGhlaWdodD0iMTIwIiByeD0iMTQiLz4KICAgIDxwYXRoIGQ9Ik0xMDUgODAgVjYwIGExMCAxMCAwIDAgMSAxMCAtMTAgaDYwIGExMCAxMCAwIDAgMSAxMCAxMCB2MjAiLz4KICAgIDxwYXRoIGQ9Ik0xNDAgMzAgVjE1IE0xNjAgMzAgVjE1Ii8+CiAgICA8Y2lyY2xlIGN4PSIxNDAiIGN5PSIxMiIgcj0iNCIgZmlsbD0iIzBiMmY2OCIgc3Ryb2tlPSJub25lIi8+CiAgICA8Y2lyY2xlIGN4PSIxNjAiIGN5PSIxMiIgcj0iNCIgZmlsbD0iIzBiMmY2OCIgc3Ryb2tlPSJub25lIi8+CiAgPC9nPgogIDxyZWN0IHg9IjEwMyIgeT0iMTMwIiB3aWR0aD0iNzQiIGhlaWdodD0iNjIiIHJ4PSI4IiBmaWxsPSJ1cmwoI3RhbmtQKSIvPgogIDxnIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSI0IiBvcGFjaXR5PSIuOCI+CiAgICA8bGluZSB4MT0iMTAzIiB5MT0iMTUwIiB4Mj0iMTc3IiB5Mj0iMTUwIi8+CiAgPC9nPgogIDwhLS0gZ2F1Z2UgLS0+CiAgPGNpcmNsZSBjeD0iMjI1IiBjeT0iMTUwIiByPSIyNiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMGIyZjY4IiBzdHJva2Utd2lkdGg9IjUiLz4KICA8bGluZSB4MT0iMjI1IiB5MT0iMTUwIiB4Mj0iMjM4IiB5Mj0iMTM4IiBzdHJva2U9IiMyZDZiYjMiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPGNpcmNsZSBjeD0iMjI1IiBjeT0iMTUwIiByPSIzLjUiIGZpbGw9IiMwYjJmNjgiLz4KICA8cGF0aCBkPSJNMTk1IDE1MCBIMTc1IiBzdHJva2U9IiMwYjJmNjgiIHN0cm9rZS13aWR0aD0iNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=" alt=""></div>
+          <div class="cap-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v5.5L5.5 17a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 8.5V3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><h3>Малотоннажное производство</h3><p>Собственные производственные площади и гибкие технологические процессы от граммов до тонн.</p>
+        </div>
+        <div class="cap">
+          <div class="cap-thumb"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMjYwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmdTIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNlZWY2ZmIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZGNlY2Y2Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHJhZGlhbEdyYWRpZW50IGlkPSJhdG9tUzEiIGN4PSIzNSUiIGN5PSIzMCUiIHI9Ijc1JSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNlYWZiZmYiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyZjlmYjgiLz4KICAgIDwvcmFkaWFsR3JhZGllbnQ+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9ImF0b21TMiIgY3g9IjM1JSIgY3k9IjMwJSIgcj0iNzUlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RjZWNmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFjNGM4ZiIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyNjAiIGZpbGw9InVybCgjYmdTKSIvPgoKICA8IS0tIGxlZnQgcGFydGlhbCBtb2xlY3VsZSAtLT4KICA8ZyBzdHJva2U9IiMwYjJmNjgiIHN0cm9rZS13aWR0aD0iNSIgZmlsbD0ibm9uZSI+CiAgICA8bGluZSB4MT0iNjAiIHkxPSIxNTAiIHgyPSI5NSIgeTI9IjEyMCIvPgogICAgPGxpbmUgeDE9Ijk1IiB5MT0iMTIwIiB4Mj0iOTUiIHkyPSI4MCIvPgogIDwvZz4KICA8Y2lyY2xlIGN4PSI2MCIgY3k9IjE1MCIgcj0iMTUiIGZpbGw9InVybCgjYXRvbVMxKSIvPgogIDxjaXJjbGUgY3g9Ijk1IiBjeT0iMTIwIiByPSIxOSIgZmlsbD0idXJsKCNhdG9tUzIpIi8+CiAgPGNpcmNsZSBjeD0iOTUiIGN5PSI4MCIgcj0iMTMiIGZpbGw9InVybCgjYXRvbVMxKSIvPgoKICA8IS0tIHBsdXMgLyBqb2luaW5nIGFycm93IC0tPgogIDxnIHN0cm9rZT0iIzJkNmJiMyIgc3Ryb2tlLXdpZHRoPSI2IiBzdHJva2UtbGluZWNhcD0icm91bmQiPgogICAgPGxpbmUgeDE9IjE0MCIgeTE9IjEzMCIgeDI9IjE3MCIgeTI9IjEzMCIvPgogICAgPGxpbmUgeDE9IjE1NSIgeTE9IjExNSIgeDI9IjE1NSIgeTI9IjE0NSIvPgogIDwvZz4KCiAgPCEtLSByaWdodCBwYXJ0aWFsIG1vbGVjdWxlIC0tPgogIDxnIHN0cm9rZT0iIzBiMmY2OCIgc3Ryb2tlLXdpZHRoPSI1IiBmaWxsPSJub25lIj4KICAgIDxsaW5lIHgxPSIyMDUiIHkxPSIxNTAiIHgyPSIyNDAiIHkyPSIxODAiLz4KICAgIDxsaW5lIHgxPSIyNDAiIHkxPSIxODAiIHgyPSIyNDAiIHkyPSIyMTUiLz4KICA8L2c+CiAgPGNpcmNsZSBjeD0iMjA1IiBjeT0iMTUwIiByPSIxNSIgZmlsbD0idXJsKCNhdG9tUzEpIi8+CiAgPGNpcmNsZSBjeD0iMjQwIiBjeT0iMTgwIiByPSIxOSIgZmlsbD0idXJsKCNhdG9tUzIpIi8+CiAgPGNpcmNsZSBjeD0iMjQwIiBjeT0iMjE1IiByPSIxMyIgZmlsbD0idXJsKCNhdG9tUzEpIi8+CgogIDwhLS0gZG90dGVkIGZvcm1pbmctYm9uZCBhcmMgc3VnZ2VzdGluZyBuZXcgc3ludGhlc2lzIGxpbmsgLS0+CiAgPHBhdGggZD0iTTExMCAxMDAgUTE1NSA0MCAyMDAgMTAwIiBzdHJva2U9IiM1ZWMzZDYiIHN0cm9rZS13aWR0aD0iNCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWRhc2hhcnJheT0iMyA4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==" alt=""></div>
+          <div class="cap-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="7" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="7" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="17" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8.1 8.3 10.7 15M15.9 8.3 13.3 15M8.4 7h7.2" stroke="currentColor" stroke-width="1.3"/></svg></div><h3>Заказной синтез</h3><p>Разработка и синтез химических соединений под задачи клиента.</p>
+        </div>
+        <div class="cap">
+          <div class="cap-thumb"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMjYwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmdRIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNlZWY2ZmIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZGNlY2Y2Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjI2MCIgZmlsbD0idXJsKCNiZ1EpIi8+CgogIDwhLS0gaGV4YWdvbiAic2FtcGxlIiBvdXRsaW5lIC0tPgogIDxwYXRoIGQ9Ik0xMTUgNjAgTDE2NSA2MCBMMTkwIDEwMCBMMTY1IDE0MCBMMTE1IDE0MCBMOTAgMTAwIFoiCiAgICAgICAgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMGIyZjY4IiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8IS0tIGNoZWNrbWFyayBpbnNpZGUgLS0+CiAgPHBhdGggZD0iTTExMiAxMDAgTDEzNSAxMjIgTDE3MiA4MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMmQ2YmIzIiBzdHJva2Utd2lkdGg9IjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgoKICA8IS0tIG1hZ25pZmllciBnbGFzcyBvdmVyIHRoZSBoZXhhZ29uIChxdWFsaXR5IGluc3BlY3Rpb24pIC0tPgogIDxjaXJjbGUgY3g9IjE4NSIgY3k9IjE1MCIgcj0iMzgiIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iLjM1IiBzdHJva2U9IiMwYjJmNjgiIHN0cm9rZS13aWR0aD0iNyIvPgogIDxsaW5lIHgxPSIyMTIiIHkxPSIxNzciIHgyPSIyNDUiIHkyPSIyMTAiIHN0cm9rZT0iIzBiMmY2OCIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8bGluZSB4MT0iMjEyIiB5MT0iMTc3IiB4Mj0iMjQ1IiB5Mj0iMjEwIiBzdHJva2U9IiM1ZWMzZDYiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=" alt=""></div>
+          <div class="cap-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 12.2 11 14.7l4.5-5.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Контроль качества</h3><p>Многоступенчатый контроль качества, современное аналитическое оборудование.</p>
+        </div>
+        <div class="cap">
+          <div class="cap-thumb"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMjYwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmdTdXAiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZjZmYiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkY2VjZjYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjYwIiBmaWxsPSJ1cmwoI2JnU3VwKSIvPgoKICA8IS0tIGhlYWRzZXQgYXJjIC0tPgogIDxwYXRoIGQ9Ik04NSAxNDAgYTY1IDY1IDAgMCAxIDEzMCAwIiBmaWxsPSJub25lIiBzdHJva2U9IiMwYjJmNjgiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPHJlY3QgeD0iNzUiIHk9IjEzMiIgd2lkdGg9IjI2IiBoZWlnaHQ9IjQ2IiByeD0iMTIiIGZpbGw9IiMyZDZiYjMiLz4KICA8cmVjdCB4PSIxOTkiIHk9IjEzMiIgd2lkdGg9IjI2IiBoZWlnaHQ9IjQ2IiByeD0iMTIiIGZpbGw9IiMyZDZiYjMiLz4KICA8cGF0aCBkPSJNMjEyIDE3OCB2MTQgYTE0IDE0IDAgMCAxIC0xNCAxNCBoLTE4IiBmaWxsPSJub25lIiBzdHJva2U9IiMwYjJmNjgiIHN0cm9rZS13aWR0aD0iNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CgogIDwhLS0gY2hhdCBidWJibGUgd2l0aCBkb3RzIChjb25zdWx0YXRpb24pIC0tPgogIDxnPgogICAgPHJlY3QgeD0iMTUwIiB5PSI2MCIgd2lkdGg9IjkwIiBoZWlnaHQ9IjU2IiByeD0iMTYiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzBiMmY2OCIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgICA8cGF0aCBkPSJNMTY4IDExNiBsLTQgMTggMTggLTE0IHoiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzBiMmY2OCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgICA8Y2lyY2xlIGN4PSIxNzUiIGN5PSI4OCIgcj0iNSIgZmlsbD0iIzVlYzNkNiIvPgogICAgPGNpcmNsZSBjeD0iMTk1IiBjeT0iODgiIHI9IjUiIGZpbGw9IiMyZDZiYjMiLz4KICAgIDxjaXJjbGUgY3g9IjIxNSIgY3k9Ijg4IiByPSI1IiBmaWxsPSIjMGIyZjY4Ii8+CiAgPC9nPgo8L3N2Zz4K" alt=""></div>
+          <div class="cap-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="3" y="13" width="4" height="6" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="17" y="13" width="4" height="6" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M21 19v1a2 2 0 0 1-2 2h-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><h3>Техническая поддержка</h3><p>Консультации по подбору реагентов, решение технических вопросов и сопровождение проектов.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="offer" class="section" style="padding-top:6px">
+    <div class="wrap">
+      <div class="section-title"><h2>Коммерческое предложение: что вы получите</h2></div>
+      <div class="process">
+        <div class="step"><div class="num">01</div><h3>Ваша заявка</h3><p>Вы оставляете заявку или отправляете спецификацию.</p></div>
+        <div class="step"><div class="num">02</div><h3>Анализ запроса</h3><p>Мы анализируем потребности и подбираем оптимальные решения.</p></div>
+        <div class="step"><div class="num">03</div><h3>Коммерческое предложение</h3><p>Вы получаете КП с условиями поставки.</p></div>
+        <div class="step"><div class="num">04</div><h3>Согласование</h3><p>Обсуждаем детали, уточняем требования и сроки.</p></div>
+        <div class="step"><div class="num">05</div><h3>Производство или резерв</h3><p>Производим продукт или резервируем на складе.</p></div>
+        <div class="step"><div class="num">06</div><h3>Контроль качества</h3><p>Проверяем соответствие продукта требованиям.</p></div>
+        <div class="step"><div class="num">07</div><h3>Поставка</h3><p>Организуем доставку по согласованным условиям.</p></div>
+        <div class="step"><div class="num">08</div><h3>Сопровождение</h3><p>Поддерживаем после поставки и консультируем.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts" class="section" style="padding-top:14px">
+    <div class="wrap">
+      <div class="contact">
+        <div class="contact-copy">
+          <div class="eyebrow">Свяжитесь с нами</div>
+          <h2>Готовы обсудить вашу задачу</h2>
+          <p>Наши специалисты помогут подобрать реагенты, разработать решение и подготовить коммерческое предложение.</p>
+          <a class="btn primary" href="mailto:info@newtech-chem.ru">Запросить предложение →</a>
+        </div>
+        <div class="contact-info">
+          <div class="c-row">
+            <svg class="c-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.05 15.05 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.02l-2.22 2.2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <div>+7 (495) 123-45-67<br>Пн–Пт с 9:00 до 18:00</div>
+          </div>
+          <div class="c-row">
+            <svg class="c-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 6.5 12 13l8-6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div>info@newtech-chem.ru</div>
+          </div>
+          <div class="c-row">
+            <svg class="c-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-11.5C19 5.9 15.9 3 12 3S5 5.9 5 9.5C5 14.9 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            <div>Московская область,<br>город Ступино</div>
+          </div>
+        </div>
+        <div class="map"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="map-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3f8fc"/>
+      <stop offset="100%" stop-color="#e4eef5"/>
+    </linearGradient>
+    <filter id="map-pin-shadow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="420" fill="url(#map-bg)"/>
+
+  <!-- streets: two minor + one main avenue each way -->
+  <rect x="0" y="94" width="900" height="14" fill="#dfe8ee"/>
+  <rect x="0" y="204" width="900" height="18" fill="#d3e0e8"/>
+  <rect x="0" y="314" width="900" height="14" fill="#dfe8ee"/>
+  <rect x="194" y="0" width="14" height="420" fill="#dfe8ee"/>
+  <rect x="424" y="0" width="18" height="420" fill="#d3e0e8"/>
+  <rect x="644" y="0" width="14" height="420" fill="#dfe8ee"/>
+
+  <!-- city blocks -->
+  <g stroke="#d7e4ee" stroke-width="2">
+    <rect x="6" y="6" width="188" height="88" rx="6" fill="#ffffff"/>
+    <rect x="208" y="6" width="216" height="88" rx="6" fill="#ffffff"/>
+    <rect x="442" y="6" width="202" height="88" rx="6" fill="#ffffff"/>
+    <rect x="658" y="6" width="236" height="88" rx="6" fill="#cfe8d2" stroke="#bcdcc0"/>
+
+    <rect x="6" y="108" width="188" height="96" rx="6" fill="#ffffff"/>
+    <rect x="208" y="108" width="216" height="96" rx="6" fill="#e4f4f8" stroke="#c9e6ee"/>
+    <rect x="442" y="108" width="202" height="96" rx="6" fill="#ffffff"/>
+    <rect x="658" y="108" width="236" height="96" rx="6" fill="#ffffff"/>
+
+    <rect x="6" y="222" width="188" height="92" rx="6" fill="#cfe8d2" stroke="#bcdcc0"/>
+    <rect x="208" y="222" width="216" height="92" rx="6" fill="#ffffff"/>
+    <rect x="442" y="222" width="202" height="92" rx="6" fill="#ffffff"/>
+    <rect x="658" y="222" width="236" height="92" rx="6" fill="#ffffff"/>
+
+    <rect x="6" y="328" width="188" height="86" rx="6" fill="#ffffff"/>
+    <rect x="208" y="328" width="216" height="86" rx="6" fill="#ffffff"/>
+    <rect x="442" y="328" width="202" height="86" rx="6" fill="#ffffff"/>
+    <rect x="658" y="328" width="236" height="86" rx="6" fill="#ffffff"/>
+  </g>
+
+  <!-- points of interest along the streets -->
+  <g>
+    <circle cx="201" cy="101" r="6" fill="#2d6bb3" opacity=".8"/>
+    <circle cx="201" cy="101" r="11" fill="none" stroke="#2d6bb3" stroke-width="2" opacity=".4"/>
+    <circle cx="651" cy="321" r="6" fill="#2d6bb3" opacity=".8"/>
+    <circle cx="651" cy="321" r="11" fill="none" stroke="#2d6bb3" stroke-width="2" opacity=".4"/>
+    <circle cx="433" cy="101" r="6" fill="#2d6bb3" opacity=".8"/>
+    <circle cx="433" cy="101" r="11" fill="none" stroke="#2d6bb3" stroke-width="2" opacity=".4"/>
+  </g>
+
+  <!-- pin marker, tip lands exactly on the main-avenue intersection -->
+  <g transform="translate(-37,-43)" filter="url(#map-pin-shadow)">
+    <ellipse cx="470" cy="256" rx="22" ry="7" fill="#0b2f68" opacity=".18"/>
+  </g>
+  <g transform="translate(-37,-43)">
+    <path d="M470 164 c-24 0 -42 18 -42 42 c0 30 42 66 42 66 s42 -36 42 -66 c0 -24 -18 -42 -42 -42 z" fill="#0b2f68" stroke="#ffffff" stroke-width="4"/>
+    <circle cx="470" cy="206" r="16" fill="#5ec3d6"/>
+  </g>
+</svg></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="#">
+          <span class="logo-mark"></span>
+          <span class="logo-text">НОВЫЕ<br>ТЕХНОЛОГИИ<small style="color:#a9c6dc">МАЛОТОННАЖНАЯ ХИМИЯ</small></span>
+        </a>
+        <p style="margin-top:19px">Малотоннажная химия для промышленности,<br>науки и новых разработок.</p>
+      </div>
+      <div><h3>Навигация</h3><ul><li>О компании</li><li>Каталог</li><li>Коммерческое предложение</li><li>Контакты</li></ul></div>
+      <div><h3>Каталог</h3><ul><li>Органическая химия</li><li>Неорганическая химия</li><li>Поиск по CAS</li></ul></div>
+      <div><h3>Контакты</h3><ul><li>+7 (495) 123-45-67</li><li>info@newtech-chem.ru</li><li>Московская область, г. Ступино</li></ul></div>
+    </div>
+    <div class="copy">© 2026 ООО «Новые технологии». Все права защищены. &nbsp;&nbsp; Политика конфиденциальности</div>
+  </div>
+</footer>
+
+<script>
+/* ==========================================================================
+   HERO SLIDER
+   Автоматическая смена Hero-изображений + точки ручного переключения.
+   Написан с защитой от ошибок: если разметка hero отсутствует на странице
+   (например, эта же связка JS используется на другой странице без Hero),
+   скрипт просто не активируется, а не бросает исключение.
+   ========================================================================== */
+
+(function initHeroSlider(){
+  const shell = document.querySelector('.hero-shell');
+  if (!shell) return; // на странице нет Hero — ничего не делаем
+
+  const slides = Array.from(shell.querySelectorAll('.hero-slide'));
+  const dots = Array.from(shell.querySelectorAll('.hero-dots button'));
+  if (slides.length === 0) return;
+
+  const AUTO_DELAY = 4500;
+  let index = Math.max(0, slides.findIndex(s => s.classList.contains('active')));
+  if (index === -1) index = 0;
+  let timer = null;
+
+  function show(i){
+    index = (i + slides.length) % slides.length;
+    slides.forEach((s, idx) => s.classList.toggle('active', idx === index));
+    dots.forEach((d, idx) => d.classList.toggle('active', idx === index));
+  }
+
+  function next(){
+    show(index + 1);
+  }
+
+  function startAuto(){
+    stopAuto();
+    if (slides.length > 1) {
+      timer = setInterval(next, AUTO_DELAY);
+    }
+  }
+
+  function stopAuto(){
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      show(i);
+      startAuto(); // сброс таймера при ручном переключении
+    });
+  });
+
+  // Пауза автопрокрутки при наведении — не влияет на верстку/высоту.
+  shell.addEventListener('mouseenter', stopAuto);
+  shell.addEventListener('mouseleave', startAuto);
+
+  // Инициализация в исходное состояние на случай, если разметка
+  // не содержит класс .active ни на одном слайде.
+  show(index);
+  startAuto();
+})();
+/* ==========================================================================
+   NAVIGATION
+   Общая логика шапки/навигации, переиспользуемая на всех страницах сайта.
+   Сейчас: подсветка активного пункта меню при скролле по Главной и
+   лёгкая тень у header при прокрутке. Всё — прогрессивное улучшение:
+   при отсутствии нужных элементов на странице просто не активируется.
+   ========================================================================== */
+
+(function initHeaderScrollState(){
+  const header = document.querySelector('header');
+  if (!header) return;
+
+  function onScroll(){
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+
+(function initActiveNavLink(){
+  const navLinks = Array.from(document.querySelectorAll('nav a[href^="#"]'));
+  if (navLinks.length === 0) return;
+
+  const sections = navLinks
+    .map(link => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+  if (sections.length === 0) return;
+
+  function setActive(){
+    let current = sections[0];
+    const scrollPos = window.scrollY + 120;
+    sections.forEach(sec => {
+      if (sec.offsetTop <= scrollPos) current = sec;
+    });
+    navLinks.forEach(link => {
+      const match = link.getAttribute('href') === '#' + current.id;
+      link.classList.toggle('active', match);
+    });
+  }
+
+  setActive();
+  window.addEventListener('scroll', setActive, { passive: true });
+})();
+
+(function initMobileNav(){
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('primary-nav');
+  if (!toggle || !nav) return;
+
+  function closeNav(){
+    nav.classList.remove('nav-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  function openNav(){
+    nav.classList.add('nav-open');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+
+  toggle.addEventListener('click', () => {
+    if (nav.classList.contains('nav-open')) closeNav(); else openNav();
+  });
+
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeNav);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeNav();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!nav.classList.contains('nav-open')) return;
+    if (nav.contains(e.target) || toggle.contains(e.target)) return;
+    closeNav();
+  });
+})();
+/* ==========================================================================
+   INTERACTIONS
+   Мелкие, безопасные улучшения интерфейса, не влияющие на текущий
+   утверждённый визуальный вид: автогод в футере и т.п.
+   ========================================================================== */
+
+(function setFooterYear(){
+  const copyEl = document.querySelector('footer .copy');
+  if (!copyEl) return;
+  const currentYear = new Date().getFullYear();
+  copyEl.innerHTML = copyEl.innerHTML.replace(/©\s*\d{4}/, '© ' + currentYear);
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 560">
+  <defs>
+    <radialGradient id="sphereTeal" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#eafbff"/>
+      <stop offset="45%" stop-color="#7fd8e6"/>
+      <stop offset="100%" stop-color="#2f9fb8"/>
+    </radialGradient>
+    <radialGradient id="sphereNavy" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#dcecff"/>
+      <stop offset="45%" stop-color="#6fa3e0"/>
+      <stop offset="100%" stop-color="#1c4c8f"/>
+    </radialGradient>
+  </defs>
+  <rect width="620" height="560" fill="#ffffff"/>
+
+  <!-- faint bond network in background -->
+  <g stroke="#dbeef4" stroke-width="2" fill="none" opacity=".7">
+    <path d="M40 470 L140 420 L140 340"/>
+    <path d="M560 90 L470 140 L470 220"/>
+    <circle cx="40" cy="470" r="10" fill="#eafbff"/>
+    <circle cx="140" cy="420" r="14" fill="#eafbff"/>
+    <circle cx="140" cy="340" r="10" fill="#eafbff"/>
+    <circle cx="560" cy="90" r="10" fill="#eafbff"/>
+    <circle cx="470" cy="140" r="14" fill="#eafbff"/>
+    <circle cx="470" cy="220" r="10" fill="#eafbff"/>
+  </g>
+
+  <!-- main molecule: fused ring + branch chain -->
+  <g stroke="#0b2f68" stroke-width="6" fill="none" stroke-linecap="round">
+    <!-- hexagon ring -->
+    <path d="M235 175 L340 120 L445 175 L445 285 L340 340 L235 285 Z"/>
+    <!-- branch chain going up-right -->
+    <path d="M445 175 L525 130"/>
+    <path d="M525 130 L525 60"/>
+    <path d="M525 130 L600 175"/>
+    <!-- branch chain going down-left -->
+    <path d="M235 285 L155 330"/>
+    <path d="M155 330 L155 400"/>
+    <path d="M155 330 L80 285"/>
+    <!-- lower branch -->
+    <path d="M340 340 L340 415"/>
+    <path d="M340 415 L400 460"/>
+    <path d="M340 415 L280 460"/>
+  </g>
+
+  <!-- atoms (spheres) -->
+  <g>
+    <circle cx="235" cy="175" r="19" fill="url(#sphereTeal)"/>
+    <circle cx="340" cy="120" r="24" fill="url(#sphereNavy)"/>
+    <circle cx="445" cy="175" r="19" fill="url(#sphereTeal)"/>
+    <circle cx="445" cy="285" r="19" fill="url(#sphereTeal)"/>
+    <circle cx="340" cy="340" r="24" fill="url(#sphereNavy)"/>
+    <circle cx="235" cy="285" r="19" fill="url(#sphereTeal)"/>
+
+    <circle cx="525" cy="130" r="16" fill="url(#sphereNavy)"/>
+    <circle cx="525" cy="60"  r="13" fill="url(#sphereTeal)"/>
+    <circle cx="600" cy="175" r="13" fill="url(#sphereTeal)"/>
+
+    <circle cx="155" cy="330" r="16" fill="url(#sphereNavy)"/>
+    <circle cx="155" cy="400" r="13" fill="url(#sphereTeal)"/>
+    <circle cx="80"  cy="285" r="13" fill="url(#sphereTeal)"/>
+
+    <circle cx="340" cy="415" r="16" fill="url(#sphereNavy)"/>
+    <circle cx="400" cy="460" r="13" fill="url(#sphereTeal)"/>
+    <circle cx="280" cy="460" r="13" fill="url(#sphereTeal)"/>
+  </g>
+
+  <!-- specular highlights -->
+  <g fill="#ffffff" opacity=".55">
+    <circle cx="330" cy="112" r="6"/>
+    <circle cx="228" cy="168" r="5"/>
+    <circle cx="438" cy="168" r="5"/>
+  </g>
+</svg>

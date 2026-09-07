@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 640" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="hero1-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3f9fc"/>
+      <stop offset="100%" stop-color="#d8e8f3"/>
+    </linearGradient>
+    <radialGradient id="hero1-sphereTeal" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#eafbff"/>
+      <stop offset="45%" stop-color="#7fd8e6"/>
+      <stop offset="100%" stop-color="#2f9fb8"/>
+    </radialGradient>
+    <radialGradient id="hero1-sphereNavy" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#dcecff"/>
+      <stop offset="45%" stop-color="#6fa3e0"/>
+      <stop offset="100%" stop-color="#1c4c8f"/>
+    </radialGradient>
+    <radialGradient id="hero1-ionBig" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#eaf3ff"/>
+      <stop offset="45%" stop-color="#5f93d6"/>
+      <stop offset="100%" stop-color="#173e78"/>
+    </radialGradient>
+    <radialGradient id="hero1-ionSmall" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#eafcff"/>
+      <stop offset="45%" stop-color="#7fd6e6"/>
+      <stop offset="100%" stop-color="#2f97b0"/>
+    </radialGradient>
+    <filter id="hero1-soft-shadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="1260" height="640" fill="url(#hero1-bg)"/>
+
+  <!-- technical grid -->
+  <g stroke="#c3dbea" stroke-width="1" opacity=".4">
+    <path d="M0 140 H1260 M0 300 H1260 M0 460 H1260"/>
+    <path d="M300 0 V640 M650 0 V640 M980 0 V640"/>
+  </g>
+
+  <!-- deep background: faint orbit rings for scientific depth -->
+  <g stroke="#a9c9de" stroke-width="1.5" fill="none" opacity=".4">
+    <ellipse cx="930" cy="360" rx="330" ry="330"/>
+    <ellipse cx="930" cy="360" rx="330" ry="330" transform="rotate(58 930 360)"/>
+    <ellipse cx="930" cy="360" rx="330" ry="330" transform="rotate(-58 930 360)"/>
+  </g>
+
+  <!-- midground: large translucent secondary molecule cluster, offset back-left, for parallax depth -->
+  <g opacity=".28" transform="translate(-40,40)">
+    <g stroke="#1c4c8f" stroke-width="7" fill="none" stroke-linecap="round">
+      <path d="M660 200 L760 150 L860 200 L860 300 L760 350 L660 300 Z"/>
+      <path d="M660 300 L590 340 L590 410"/>
+    </g>
+    <circle cx="660" cy="200" r="24" fill="url(#hero1-sphereNavy)"/>
+    <circle cx="760" cy="150" r="20" fill="url(#hero1-sphereTeal)"/>
+    <circle cx="860" cy="200" r="24" fill="url(#hero1-sphereNavy)"/>
+    <circle cx="860" cy="300" r="20" fill="url(#hero1-sphereTeal)"/>
+    <circle cx="760" cy="350" r="24" fill="url(#hero1-sphereNavy)"/>
+    <circle cx="660" cy="300" r="20" fill="url(#hero1-sphereTeal)"/>
+    <circle cx="590" cy="340" r="14" fill="url(#hero1-sphereTeal)"/>
+    <circle cx="590" cy="410" r="11" fill="url(#hero1-sphereNavy)"/>
+  </g>
+
+  <!-- faint bond-dust texture under the text panel -->
+  <g fill="#cfe6f1" opacity=".4">
+    <circle cx="120" cy="480" r="5"/>
+    <circle cx="210" cy="540" r="4"/>
+    <circle cx="90" cy="590" r="6"/>
+    <circle cx="260" cy="440" r="4"/>
+    <circle cx="180" cy="380" r="5"/>
+    <circle cx="340" cy="560" r="4"/>
+  </g>
+
+  <!-- secondary accent: ionic-lattice fragment, upper right, bleeding off the edge -->
+  <g stroke="#173e78" stroke-width="3" opacity=".6">
+    <line x1="960" y1="30" x2="1040" y2="30"/>
+    <line x1="960" y1="30" x2="1000" y2="110"/>
+    <line x1="1040" y1="30" x2="1120" y2="30"/>
+    <line x1="1040" y1="30" x2="1080" y2="110"/>
+    <line x1="1120" y1="30" x2="1200" y2="30"/>
+    <line x1="1120" y1="30" x2="1160" y2="110"/>
+    <line x1="1200" y1="30" x2="1240" y2="110"/>
+    <line x1="1000" y1="110" x2="1080" y2="110"/>
+    <line x1="1080" y1="110" x2="1160" y2="110"/>
+    <line x1="1160" y1="110" x2="1240" y2="110"/>
+    <line x1="1000" y1="110" x2="1040" y2="190"/>
+    <line x1="1160" y1="110" x2="1200" y2="190"/>
+    <line x1="1040" y1="190" x2="1120" y2="190"/>
+    <line x1="1120" y1="190" x2="1200" y2="190"/>
+  </g>
+  <g opacity=".75">
+    <circle cx="960" cy="30" r="15" fill="url(#hero1-ionBig)"/>
+    <circle cx="1040" cy="30" r="9" fill="url(#hero1-ionSmall)"/>
+    <circle cx="1120" cy="30" r="15" fill="url(#hero1-ionBig)"/>
+    <circle cx="1200" cy="30" r="9" fill="url(#hero1-ionSmall)"/>
+    <circle cx="1000" cy="110" r="9" fill="url(#hero1-ionSmall)"/>
+    <circle cx="1080" cy="110" r="15" fill="url(#hero1-ionBig)"/>
+    <circle cx="1160" cy="110" r="9" fill="url(#hero1-ionSmall)"/>
+    <circle cx="1240" cy="110" r="15" fill="url(#hero1-ionBig)"/>
+    <circle cx="1040" cy="190" r="15" fill="url(#hero1-ionBig)"/>
+    <circle cx="1120" cy="190" r="9" fill="url(#hero1-ionSmall)"/>
+    <circle cx="1200" cy="190" r="15" fill="url(#hero1-ionBig)"/>
+  </g>
+
+  <!-- ground shadow beneath the primary molecule -->
+  <ellipse cx="925" cy="560" rx="230" ry="46" fill="#0b2f68" opacity=".16" filter="url(#hero1-soft-shadow)"/>
+
+  <!-- primary focal molecule: large fused ring + dense branch chains -->
+  <g stroke="#0b2f68" stroke-width="9" fill="none" stroke-linecap="round">
+    <path d="M920 220 L1063 300 L1063 460 L920 540 L777 460 L777 300 Z"/>
+    <path d="M1063 300 L1146 250"/>
+    <path d="M1146 250 L1146 155"/>
+    <path d="M1146 250 L1225 298"/>
+    <path d="M1225 298 L1225 380"/>
+    <path d="M777 460 L694 508"/>
+    <path d="M694 508 L694 600"/>
+    <path d="M694 508 L612 460"/>
+    <path d="M920 540 L920 620"/>
+    <path d="M920 620 L985 640"/>
+    <path d="M920 620 L855 640"/>
+    <path d="M777 300 L694 252"/>
+    <path d="M694 252 L694 165"/>
+  </g>
+
+  <g>
+    <circle cx="920" cy="220" r="34" fill="url(#hero1-sphereNavy)"/>
+    <circle cx="1063" cy="300" r="28" fill="url(#hero1-sphereTeal)"/>
+    <circle cx="1063" cy="460" r="28" fill="url(#hero1-sphereTeal)"/>
+    <circle cx="920" cy="540" r="34" fill="url(#hero1-sphereNavy)"/>
+    <circle cx="777" cy="460" r="28" fill="url(#hero1-sphereTeal)"/>
+    <circle cx="777" cy="300" r="28" fill="url(#hero1-sphereTeal)"/>
+
+    <circle cx="1146" cy="250" r="21" fill="url(#hero1-sphereNavy)"/>
+    <circle cx="1146" cy="155" r="16" fill="url(#hero1-sphereTeal)"/>
+    <circle cx="1225" cy="298" r="16" fill="url(#hero1-sphereNavy)"/>
+    <circle cx="1225" cy="380" r="13" fill="url(#hero1-sphereTeal)"/>
+
+    <circle cx="694" cy="508" r="21" fill="url(#hero1-sphereNavy)"/>
+    <circle cx="694" cy="600" r="16" fill="url(#hero1-sphereTeal)"/>
+    <circle cx="612" cy="460" r="16" fill="url(#hero1-sphereTeal)"/>
+
+    <circle cx="920" cy="620" r="21" fill="url(#hero1-sphereNavy)"/>
+    <circle cx="985" cy="640" r="16" fill="url(#hero1-sphereTeal)"/>
+    <circle cx="855" cy="640" r="16" fill="url(#hero1-sphereTeal)"/>
+
+    <circle cx="694" cy="252" r="21" fill="url(#hero1-sphereNavy)"/>
+    <circle cx="694" cy="165" r="16" fill="url(#hero1-sphereTeal)"/>
+  </g>
+
+  <g fill="#ffffff" opacity=".55">
+    <circle cx="906" cy="208" r="9"/>
+    <circle cx="1051" cy="290" r="7"/>
+    <circle cx="765" cy="290" r="7"/>
+    <circle cx="1136" cy="240" r="6"/>
+    <circle cx="682" cy="498" r="6"/>
+  </g>
+</svg>

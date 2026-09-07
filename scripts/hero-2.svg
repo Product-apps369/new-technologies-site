@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 640" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="hero2-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eef6fb"/>
+      <stop offset="100%" stop-color="#d5e6f1"/>
+    </linearGradient>
+    <linearGradient id="hero2-liquidBlue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8fd6e6"/>
+      <stop offset="100%" stop-color="#2d8fb8"/>
+    </linearGradient>
+    <linearGradient id="hero2-liquidNavy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6fa3e0"/>
+      <stop offset="100%" stop-color="#123c73"/>
+    </linearGradient>
+    <linearGradient id="hero2-benchGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#eaf2f8"/>
+    </linearGradient>
+    <linearGradient id="hero2-tankP" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7fd6e6"/>
+      <stop offset="100%" stop-color="#2d6bb3"/>
+    </linearGradient>
+    <filter id="hero2-soft-shadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+    </filter>
+    <clipPath id="hero2-clip-erlenmeyer">
+      <path d="M330 300 L330 380 L260 540 Q255 560 280 560 L430 560 Q455 560 450 540 L380 380 L380 300 Z"/>
+    </clipPath>
+    <clipPath id="hero2-clip-round">
+      <path d="M520 260 L520 350 Q460 400 460 470 A80 80 0 0 0 620 470 Q620 400 560 350 L560 260 Z"/>
+    </clipPath>
+    <clipPath id="hero2-clip-beaker">
+      <path d="M655 400 L648 540 Q647 550 657 550 L753 550 Q763 550 762 540 L755 400 Z"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1260" height="640" fill="url(#hero2-bg)"/>
+
+  <!-- technical grid -->
+  <g stroke="#c3dbea" stroke-width="1" opacity=".4">
+    <path d="M0 140 H1260 M0 300 H1260"/>
+    <path d="M300 0 V640 M650 0 V640 M980 0 V640"/>
+  </g>
+
+  <!-- floating molecule motif, top-left -->
+  <g stroke="#2d6bb3" stroke-width="4" opacity=".5" fill="none">
+    <path d="M90 90 L150 55 L210 90 L210 150 L150 185 L90 150 Z"/>
+  </g>
+  <g fill="#5ec3d6" opacity=".5">
+    <circle cx="90" cy="90" r="6"/><circle cx="150" cy="55" r="6"/><circle cx="210" cy="90" r="6"/>
+    <circle cx="210" cy="150" r="6"/><circle cx="150" cy="185" r="6"/><circle cx="90" cy="150" r="6"/>
+  </g>
+
+  <!-- background: second, smaller reactor silhouette for depth, set back and faded -->
+  <g transform="translate(540,30) scale(1.05)" opacity=".18" stroke="#0b2f68" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="95" y="80" width="90" height="120" rx="14"/>
+    <path d="M105 80 V60 a10 10 0 0 1 10 -10 h60 a10 10 0 0 1 10 10 v20"/>
+  </g>
+
+  <!-- bench, spans full width -->
+  <rect x="0" y="558" width="1260" height="82" fill="url(#hero2-benchGrad)"/>
+  <rect x="0" y="556" width="1260" height="6" fill="#c3d8e6"/>
+
+  <!-- ground shadows -->
+  <ellipse cx="330" cy="562" rx="150" ry="14" fill="#0b2f68" opacity=".14" filter="url(#hero2-soft-shadow)"/>
+  <ellipse cx="1080" cy="562" rx="170" ry="16" fill="#0b2f68" opacity=".18" filter="url(#hero2-soft-shadow)"/>
+
+  <!-- vessels: erlenmeyer, round-bottom (fixed liquid geometry), beaker, vial -->
+  <g transform="translate(30,10) scale(1)">
+    <!-- flask 1: erlenmeyer, blue liquid -->
+    <g>
+      <path d="M330 300 L330 380 L260 540 Q255 560 280 560 L430 560 Q455 560 450 540 L380 380 L380 300 Z"
+            fill="#ffffff" opacity=".2" stroke="#123c73" stroke-width="5"/>
+      <g clip-path="url(#hero2-clip-erlenmeyer)">
+        <rect x="240" y="415" width="230" height="150" fill="url(#hero2-liquidBlue)"/>
+      </g>
+      <rect x="322" y="288" width="66" height="18" rx="4" fill="none" stroke="#123c73" stroke-width="5"/>
+      <circle cx="345" cy="460" r="6" fill="#eafcff" opacity=".8"/>
+      <circle cx="375" cy="500" r="4" fill="#eafcff" opacity=".7"/>
+      <circle cx="330" cy="510" r="5" fill="#eafcff" opacity=".7"/>
+    </g>
+
+    <!-- flask 2: round-bottom, navy liquid — liquid now traces the real inner wall, no gap -->
+    <g>
+      <path d="M520 260 L520 350 Q460 400 460 470 A80 80 0 0 0 620 470 Q620 400 560 350 L560 260 Z"
+            fill="#ffffff" opacity=".2" stroke="#0b2f68" stroke-width="5"/>
+      <g clip-path="url(#hero2-clip-round)">
+        <rect x="440" y="410" width="200" height="170" fill="url(#hero2-liquidNavy)"/>
+      </g>
+      <rect x="512" y="248" width="56" height="16" rx="4" fill="none" stroke="#0b2f68" stroke-width="5"/>
+      <circle cx="540" cy="440" r="5" fill="#dceaff" opacity=".8"/>
+      <circle cx="565" cy="450" r="4" fill="#dceaff" opacity=".7"/>
+    </g>
+
+    <!-- flask 3: beaker with graduation, teal liquid -->
+    <g>
+      <path d="M655 400 L648 540 Q647 550 657 550 L753 550 Q763 550 762 540 L755 400 Z"
+            fill="#ffffff" opacity=".2" stroke="#2d6bb3" stroke-width="5"/>
+      <g clip-path="url(#hero2-clip-beaker)">
+        <rect x="630" y="465" width="150" height="95" fill="url(#hero2-liquidBlue)"/>
+      </g>
+      <path d="M655 400 L755 400 L761 425 L649 425 Z" fill="none" stroke="#2d6bb3" stroke-width="5" stroke-linejoin="round"/>
+      <g stroke="#2d6bb3" stroke-width="3" opacity=".7">
+        <line x1="738" y1="450" x2="750" y2="450"/>
+        <line x1="736" y1="490" x2="750" y2="490"/>
+        <line x1="734" y1="525" x2="750" y2="525"/>
+      </g>
+    </g>
+
+    <!-- flask 4: small vial, teal liquid -->
+    <g>
+      <rect x="810" y="380" width="70" height="140" rx="14" fill="#ffffff" opacity=".2" stroke="#2d6bb3" stroke-width="5"/>
+      <path d="M812 470 h66 v36 a14 14 0 0 1 -14 14 h-38 a14 14 0 0 1 -14 -14 z" fill="url(#hero2-liquidBlue)"/>
+      <rect x="825" y="360" width="40" height="20" rx="4" fill="none" stroke="#2d6bb3" stroke-width="5"/>
+    </g>
+
+    <!-- rising bubbles -->
+    <g fill="#ffffff" opacity=".7">
+      <circle cx="345" cy="330" r="4"/>
+      <circle cx="360" cy="360" r="3"/>
+      <circle cx="540" cy="300" r="4"/>
+      <circle cx="700" cy="380" r="3"/>
+      <circle cx="845" cy="410" r="3"/>
+    </g>
+  </g>
+
+  <!-- pipe connecting the production line to the reactor -->
+  <rect x="895" y="546" width="40" height="12" rx="6" fill="#c3d8e6"/>
+
+  <!-- reactor tank with gauge, right side, scaled up to hero scale -->
+  <g transform="translate(725,148) scale(2.05)">
+    <g stroke="#0b2f68" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="95" y="80" width="90" height="120" rx="14"/>
+      <path d="M105 80 V60 a10 10 0 0 1 10 -10 h60 a10 10 0 0 1 10 10 v20"/>
+      <path d="M140 30 V15 M160 30 V15"/>
+      <circle cx="140" cy="12" r="4" fill="#0b2f68" stroke="none"/>
+      <circle cx="160" cy="12" r="4" fill="#0b2f68" stroke="none"/>
+    </g>
+    <rect x="103" y="130" width="74" height="62" rx="8" fill="url(#hero2-tankP)"/>
+    <g stroke="#ffffff" stroke-width="4" opacity=".8">
+      <line x1="103" y1="150" x2="177" y2="150"/>
+    </g>
+    <circle cx="225" cy="150" r="26" fill="#ffffff" stroke="#0b2f68" stroke-width="5"/>
+    <line x1="225" y1="150" x2="238" y2="138" stroke="#2d6bb3" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="225" cy="150" r="3.5" fill="#0b2f68"/>
+    <path d="M195 150 H175" stroke="#0b2f68" stroke-width="6" stroke-linecap="round"/>
+  </g>
+</svg>

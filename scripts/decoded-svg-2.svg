@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 560">
+  <defs>
+    <radialGradient id="ionBig" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#eaf3ff"/>
+      <stop offset="45%" stop-color="#5f93d6"/>
+      <stop offset="100%" stop-color="#173e78"/>
+    </radialGradient>
+    <radialGradient id="ionSmall" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#eafcff"/>
+      <stop offset="45%" stop-color="#7fd6e6"/>
+      <stop offset="100%" stop-color="#2f97b0"/>
+    </radialGradient>
+  </defs>
+  <rect width="620" height="560" fill="#ffffff"/>
+  <g stroke="#0b2f68" stroke-width="4.5" opacity=".85">
+    <line x1="70.0" y1="60.0" x2="190.0" y2="60.0"/>
+    <line x1="70.0" y1="60.0" x2="88.9" y2="165.0"/>
+    <line x1="190.0" y1="60.0" x2="310.0" y2="60.0"/>
+    <line x1="190.0" y1="60.0" x2="208.9" y2="165.0"/>
+    <line x1="310.0" y1="60.0" x2="430.0" y2="60.0"/>
+    <line x1="310.0" y1="60.0" x2="328.9" y2="165.0"/>
+    <line x1="430.0" y1="60.0" x2="550.0" y2="60.0"/>
+    <line x1="430.0" y1="60.0" x2="448.9" y2="165.0"/>
+    <line x1="550.0" y1="60.0" x2="568.9" y2="165.0"/>
+    <line x1="88.9" y1="165.0" x2="208.9" y2="165.0"/>
+    <line x1="88.9" y1="165.0" x2="70.0" y2="270.0"/>
+    <line x1="208.9" y1="165.0" x2="328.9" y2="165.0"/>
+    <line x1="208.9" y1="165.0" x2="190.0" y2="270.0"/>
+    <line x1="328.9" y1="165.0" x2="448.9" y2="165.0"/>
+    <line x1="328.9" y1="165.0" x2="310.0" y2="270.0"/>
+    <line x1="448.9" y1="165.0" x2="568.9" y2="165.0"/>
+    <line x1="448.9" y1="165.0" x2="430.0" y2="270.0"/>
+    <line x1="568.9" y1="165.0" x2="550.0" y2="270.0"/>
+    <line x1="70.0" y1="270.0" x2="190.0" y2="270.0"/>
+    <line x1="70.0" y1="270.0" x2="88.9" y2="375.0"/>
+    <line x1="190.0" y1="270.0" x2="310.0" y2="270.0"/>
+    <line x1="190.0" y1="270.0" x2="208.9" y2="375.0"/>
+    <line x1="310.0" y1="270.0" x2="430.0" y2="270.0"/>
+    <line x1="310.0" y1="270.0" x2="328.9" y2="375.0"/>
+    <line x1="430.0" y1="270.0" x2="550.0" y2="270.0"/>
+    <line x1="430.0" y1="270.0" x2="448.9" y2="375.0"/>
+    <line x1="550.0" y1="270.0" x2="568.9" y2="375.0"/>
+    <line x1="88.9" y1="375.0" x2="208.9" y2="375.0"/>
+    <line x1="88.9" y1="375.0" x2="70.0" y2="480.0"/>
+    <line x1="208.9" y1="375.0" x2="328.9" y2="375.0"/>
+    <line x1="208.9" y1="375.0" x2="190.0" y2="480.0"/>
+    <line x1="328.9" y1="375.0" x2="448.9" y2="375.0"/>
+    <line x1="328.9" y1="375.0" x2="310.0" y2="480.0"/>
+    <line x1="448.9" y1="375.0" x2="568.9" y2="375.0"/>
+    <line x1="448.9" y1="375.0" x2="430.0" y2="480.0"/>
+    <line x1="568.9" y1="375.0" x2="550.0" y2="480.0"/>
+    <line x1="70.0" y1="480.0" x2="190.0" y2="480.0"/>
+    <line x1="190.0" y1="480.0" x2="310.0" y2="480.0"/>
+    <line x1="310.0" y1="480.0" x2="430.0" y2="480.0"/>
+    <line x1="430.0" y1="480.0" x2="550.0" y2="480.0"/>
+  </g>
+  <g>
+    <circle cx="70.0" cy="60.0" r="22" fill="url(#ionBig)"/>
+    <circle cx="190.0" cy="60.0" r="14" fill="url(#ionSmall)"/>
+    <circle cx="310.0" cy="60.0" r="22" fill="url(#ionBig)"/>
+    <circle cx="430.0" cy="60.0" r="14" fill="url(#ionSmall)"/>
+    <circle cx="550.0" cy="60.0" r="22" fill="url(#ionBig)"/>
+    <circle cx="88.9" cy="165.0" r="14" fill="url(#ionSmall)"/>
+    <circle cx="208.9" cy="165.0" r="22" fill="url(#ionBig)"/>
+    <circle cx="328.9" cy="165.0" r="14" fill="url(#ionSmall)"/>
+    <circle cx="448.9" cy="165.0" r="22" fill="url(#ionBig)"/>
+    <circle cx="568.9" cy="165.0" r="14" fill="url(#ionSmall)"/>
+    <circle cx="70.0" cy="270.0" r="22" fill="url(#ionBig)"/>
+    <circle cx="190.0" cy="270.0" r="14" fill="url(#ionSmall)"/>
+    <circle cx="310.0" cy="270.0" r="22" fill="url(#ionBig)"/>
+    <circle cx="430.0" cy="270.0" r="14" fill="url(#ionSmall)"/>
+    <circle cx="550.0" cy="270.0" r="22" fill="url(#ionBig)"/>
+    <circle cx="88.9" cy="375.0" r="14" fill="url(#ionSmall)"/>
+    <circle cx="208.9" cy="375.0" r="22" fill="url(#ionBig)"/>
+    <circle cx="328.9" cy="375.0" r="14" fill="url(#ionSmall)"/>
+    <circle cx="448.9" cy="375.0" r="22" fill="url(#ionBig)"/>
+    <circle cx="568.9" cy="375.0" r="14" fill="url(#ionSmall)"/>
+    <circle cx="70.0" cy="480.0" r="22" fill="url(#ionBig)"/>
+    <circle cx="190.0" cy="480.0" r="14" fill="url(#ionSmall)"/>
+    <circle cx="310.0" cy="480.0" r="22" fill="url(#ionBig)"/>
+    <circle cx="430.0" cy="480.0" r="14" fill="url(#ionSmall)"/>
+    <circle cx="550.0" cy="480.0" r="22" fill="url(#ionBig)"/>
+  </g>
+  <g fill="#ffffff" opacity=".5">
+    <circle cx="64.0" cy="53.0" r="5"/>
+    <circle cx="304.0" cy="53.0" r="5"/>
+    <circle cx="544.0" cy="53.0" r="5"/>
+    <circle cx="202.9" cy="158.0" r="5"/>
+    <circle cx="442.9" cy="158.0" r="5"/>
+    <circle cx="64.0" cy="263.0" r="5"/>
+    <circle cx="304.0" cy="263.0" r="5"/>
+    <circle cx="544.0" cy="263.0" r="5"/>
+    <circle cx="202.9" cy="368.0" r="5"/>
+    <circle cx="442.9" cy="368.0" r="5"/>
+    <circle cx="64.0" cy="473.0" r="5"/>
+    <circle cx="304.0" cy="473.0" r="5"/>
+    <circle cx="544.0" cy="473.0" r="5"/>
+  </g>
+</svg>

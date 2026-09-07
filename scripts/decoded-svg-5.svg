@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 260">
+  <defs>
+    <linearGradient id="bgS" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef6fb"/>
+      <stop offset="100%" stop-color="#dcecf6"/>
+    </linearGradient>
+    <radialGradient id="atomS1" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#eafbff"/><stop offset="100%" stop-color="#2f9fb8"/>
+    </radialGradient>
+    <radialGradient id="atomS2" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#dcecff"/><stop offset="100%" stop-color="#1c4c8f"/>
+    </radialGradient>
+  </defs>
+  <rect width="300" height="260" fill="url(#bgS)"/>
+
+  <!-- left partial molecule -->
+  <g stroke="#0b2f68" stroke-width="5" fill="none">
+    <line x1="60" y1="150" x2="95" y2="120"/>
+    <line x1="95" y1="120" x2="95" y2="80"/>
+  </g>
+  <circle cx="60" cy="150" r="15" fill="url(#atomS1)"/>
+  <circle cx="95" cy="120" r="19" fill="url(#atomS2)"/>
+  <circle cx="95" cy="80" r="13" fill="url(#atomS1)"/>
+
+  <!-- plus / joining arrow -->
+  <g stroke="#2d6bb3" stroke-width="6" stroke-linecap="round">
+    <line x1="140" y1="130" x2="170" y2="130"/>
+    <line x1="155" y1="115" x2="155" y2="145"/>
+  </g>
+
+  <!-- right partial molecule -->
+  <g stroke="#0b2f68" stroke-width="5" fill="none">
+    <line x1="205" y1="150" x2="240" y2="180"/>
+    <line x1="240" y1="180" x2="240" y2="215"/>
+  </g>
+  <circle cx="205" cy="150" r="15" fill="url(#atomS1)"/>
+  <circle cx="240" cy="180" r="19" fill="url(#atomS2)"/>
+  <circle cx="240" cy="215" r="13" fill="url(#atomS1)"/>
+
+  <!-- dotted forming-bond arc suggesting new synthesis link -->
+  <path d="M110 100 Q155 40 200 100" stroke="#5ec3d6" stroke-width="4" fill="none" stroke-dasharray="3 8" stroke-linecap="round"/>
+</svg>

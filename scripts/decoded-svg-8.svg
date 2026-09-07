@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420">
+  <defs>
+    <linearGradient id="mapBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3f8fc"/>
+      <stop offset="100%" stop-color="#e4eef5"/>
+    </linearGradient>
+    <linearGradient id="riverGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#bfe3ee"/>
+      <stop offset="100%" stop-color="#9fd2e2"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="420" fill="url(#mapBg)"/>
+  <g fill="#ffffff" stroke="#d5e4ee" stroke-width="2">
+    <rect x="10" y="10" width="92" height="68" rx="6"/>
+    <rect x="116" y="10" width="92" height="68" rx="6"/>
+    <rect x="222" y="10" width="92" height="68" rx="6"/>
+    <rect x="434" y="10" width="92" height="68" rx="6"/>
+    <rect x="540" y="10" width="92" height="68" rx="6"/>
+    <rect x="752" y="10" width="92" height="68" rx="6"/>
+    <rect x="-10" y="92" width="92" height="68" rx="6"/>
+    <rect x="308" y="92" width="92" height="68" rx="6"/>
+    <rect x="414" y="92" width="92" height="68" rx="6"/>
+    <rect x="520" y="92" width="92" height="68" rx="6"/>
+    <rect x="626" y="92" width="92" height="68" rx="6"/>
+    <rect x="732" y="92" width="92" height="68" rx="6"/>
+    <rect x="838" y="92" width="92" height="68" rx="6"/>
+    <rect x="10" y="174" width="92" height="68" rx="6"/>
+    <rect x="116" y="174" width="92" height="68" rx="6"/>
+    <rect x="222" y="174" width="92" height="68" rx="6"/>
+    <rect x="434" y="174" width="92" height="68" rx="6"/>
+    <rect x="540" y="174" width="92" height="68" rx="6"/>
+    <rect x="646" y="174" width="92" height="68" rx="6"/>
+    <rect x="858" y="174" width="92" height="68" rx="6"/>
+    <rect x="-10" y="256" width="92" height="68" rx="6"/>
+    <rect x="96" y="256" width="92" height="68" rx="6"/>
+    <rect x="202" y="256" width="92" height="68" rx="6"/>
+    <rect x="308" y="256" width="92" height="68" rx="6"/>
+    <rect x="414" y="256" width="92" height="68" rx="6"/>
+    <rect x="520" y="256" width="92" height="68" rx="6"/>
+    <rect x="838" y="256" width="92" height="68" rx="6"/>
+    <rect x="10" y="338" width="92" height="68" rx="6"/>
+    <rect x="116" y="338" width="92" height="68" rx="6"/>
+    <rect x="222" y="338" width="92" height="68" rx="6"/>
+    <rect x="328" y="338" width="92" height="68" rx="6"/>
+    <rect x="434" y="338" width="92" height="68" rx="6"/>
+    <rect x="540" y="338" width="92" height="68" rx="6"/>
+    <rect x="646" y="338" width="92" height="68" rx="6"/>
+    <rect x="752" y="338" width="92" height="68" rx="6"/>
+    <rect x="858" y="338" width="92" height="68" rx="6"/>
+    <rect x="-10" y="420" width="92" height="68" rx="6"/>
+    <rect x="96" y="420" width="92" height="68" rx="6"/>
+    <rect x="202" y="420" width="92" height="68" rx="6"/>
+    <rect x="308" y="420" width="92" height="68" rx="6"/>
+    <rect x="414" y="420" width="92" height="68" rx="6"/>
+    <rect x="520" y="420" width="92" height="68" rx="6"/>
+    <rect x="732" y="420" width="92" height="68" rx="6"/>
+    <rect x="838" y="420" width="92" height="68" rx="6"/>
+  </g>
+  <path d="M0 60 C 220 40, 260 160, 460 150 C 660 140, 700 260, 900 230 L 900 300 C 700 330, 660 210, 460 220 C 260 230, 220 110, 0 130 Z" fill="url(#riverGrad)" opacity=".8"/>
+  <g fill="#cfe8d2" opacity=".85">
+    <rect x="60" y="260" width="150" height="120" rx="18"/>
+    <rect x="640" y="40" width="130" height="90" rx="18"/>
+  </g>
+  <g stroke="#c4d6e2" stroke-width="6" opacity=".9">
+    <path d="M0 200 L900 190" />
+    <path d="M340 0 L360 420" />
+    <path d="M620 0 L600 420" />
+  </g>
+  <g>
+    <ellipse cx="470" cy="256" rx="22" ry="7" fill="#0b2f68" opacity=".18"/>
+    <path d="M470 164 c-24 0 -42 18 -42 42 c0 30 42 66 42 66 s42 -36 42 -66 c0 -24 -18 -42 -42 -42 z" fill="#0b2f68" stroke="#ffffff" stroke-width="4"/>
+    <circle cx="470" cy="206" r="16" fill="#5ec3d6"/>
+  </g>
+  <circle cx="210" cy="110" r="7" fill="#2d6bb3" opacity=".8"/>
+  <circle cx="210" cy="110" r="12" fill="none" stroke="#2d6bb3" stroke-width="2" opacity=".4"/>
+  <circle cx="700" cy="300" r="7" fill="#2d6bb3" opacity=".8"/>
+  <circle cx="700" cy="300" r="12" fill="none" stroke="#2d6bb3" stroke-width="2" opacity=".4"/>
+  <circle cx="150" cy="60" r="7" fill="#2d6bb3" opacity=".8"/>
+  <circle cx="150" cy="60" r="12" fill="none" stroke="#2d6bb3" stroke-width="2" opacity=".4"/>
+</svg>

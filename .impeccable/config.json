@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-06T17:50:42.850Z",
+        "reason": "verified: header.scrolled box-shadow (line ~169) is a 6% opacity neutral navy elevation shadow (0 4px 16px), not a chromatic glow; page background is light, not dark. False positive from regex-only degraded detector mode (no CSS parser available)."
+      },
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-06T17:52:19.730Z",
+        "reason": "client-approved design token (--font-family in the locked DESIGN TOKENS block); site explicitly commits to Inter, self-hosting is planned per the approved redesign plan, not open for a font swap without client sign-off."
+      }
+    ]
+  }
+}

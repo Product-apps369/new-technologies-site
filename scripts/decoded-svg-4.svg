@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 260">
+  <defs>
+    <linearGradient id="bgP" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef6fb"/>
+      <stop offset="100%" stop-color="#dcecf6"/>
+    </linearGradient>
+    <linearGradient id="tankP" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7fd6e6"/>
+      <stop offset="100%" stop-color="#2d6bb3"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="260" fill="url(#bgP)"/>
+  <g stroke="#0b2f68" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="95" y="80" width="90" height="120" rx="14"/>
+    <path d="M105 80 V60 a10 10 0 0 1 10 -10 h60 a10 10 0 0 1 10 10 v20"/>
+    <path d="M140 30 V15 M160 30 V15"/>
+    <circle cx="140" cy="12" r="4" fill="#0b2f68" stroke="none"/>
+    <circle cx="160" cy="12" r="4" fill="#0b2f68" stroke="none"/>
+  </g>
+  <rect x="103" y="130" width="74" height="62" rx="8" fill="url(#tankP)"/>
+  <g stroke="#ffffff" stroke-width="4" opacity=".8">
+    <line x1="103" y1="150" x2="177" y2="150"/>
+  </g>
+  <!-- gauge -->
+  <circle cx="225" cy="150" r="26" fill="#ffffff" stroke="#0b2f68" stroke-width="5"/>
+  <line x1="225" y1="150" x2="238" y2="138" stroke="#2d6bb3" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="225" cy="150" r="3.5" fill="#0b2f68"/>
+  <path d="M195 150 H175" stroke="#0b2f68" stroke-width="6" stroke-linecap="round"/>
+</svg>

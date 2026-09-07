@@ -1,0 +1,67 @@
+{
+  "header": {
+    "top": 0,
+    "height": 76
+  },
+  "sections": [
+    {
+      "cls": "hero",
+      "id": "",
+      "top": 76,
+      "height": 544
+    },
+    {
+      "cls": "benefits",
+      "id": "",
+      "top": 620,
+      "height": 116
+    },
+    {
+      "cls": "search-section",
+      "id": "",
+      "top": 736,
+      "height": 240
+    },
+    {
+      "cls": "section",
+      "id": "catalog",
+      "top": 975,
+      "height": 335
+    },
+    {
+      "cls": "section",
+      "id": "",
+      "top": 1310,
+      "height": 459
+    },
+    {
+      "cls": "section",
+      "id": "about",
+      "top": 1769,
+      "height": 418
+    },
+    {
+      "cls": "section",
+      "id": "",
+      "top": 2187,
+      "height": 294
+    },
+    {
+      "cls": "section",
+      "id": "offer",
+      "top": 2482,
+      "height": 268
+    },
+    {
+      "cls": "section",
+      "id": "contacts",
+      "top": 2750,
+      "height": 334
+    }
+  ],
+  "footer": {
+    "top": 3144,
+    "height": 234
+  },
+  "scrollHeight": 3378
+}

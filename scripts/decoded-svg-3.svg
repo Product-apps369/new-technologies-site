@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700">
+  <defs>
+    <linearGradient id="labBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eef6fb"/>
+      <stop offset="100%" stop-color="#dbeaf4"/>
+    </linearGradient>
+    <linearGradient id="liquidBlue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8fd6e6"/>
+      <stop offset="100%" stop-color="#2d8fb8"/>
+    </linearGradient>
+    <linearGradient id="liquidNavy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6fa3e0"/>
+      <stop offset="100%" stop-color="#123c73"/>
+    </linearGradient>
+    <linearGradient id="benchGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#eaf2f8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="700" fill="url(#labBg)"/>
+
+  <!-- faint background grid (graph paper / technical feel) -->
+  <g stroke="#c9dced" stroke-width="1" opacity=".5">
+    <path d="M0 120 H900 M0 220 H900 M0 320 H900"/>
+    <path d="M150 0 V700 M450 0 V700 M750 0 V700"/>
+  </g>
+
+  <!-- floating molecule motif top-right -->
+  <g stroke="#2d6bb3" stroke-width="4" opacity=".55" fill="none">
+    <path d="M700 90 L760 60 L820 90 L820 150 L760 180 L700 150 Z"/>
+  </g>
+  <g fill="#5ec3d6" opacity=".55">
+    <circle cx="700" cy="90" r="7"/><circle cx="760" cy="60" r="7"/><circle cx="820" cy="90" r="7"/>
+    <circle cx="820" cy="150" r="7"/><circle cx="760" cy="180" r="7"/><circle cx="700" cy="150" r="7"/>
+  </g>
+
+  <!-- bench line -->
+  <rect x="0" y="560" width="900" height="140" fill="url(#benchGrad)"/>
+  <rect x="0" y="558" width="900" height="6" fill="#c3d8e6"/>
+
+  <!-- flask 1: erlenmeyer, blue liquid -->
+  <g>
+    <path d="M330 300 L330 380 L260 540 Q255 560 280 560 L430 560 Q455 560 450 540 L380 380 L380 300 Z"
+          fill="#ffffff" opacity=".18" stroke="#123c73" stroke-width="5"/>
+    <path d="M300 420 L410 420 L450 540 Q455 560 430 560 L280 560 Q255 560 260 540 L300 420 Z" fill="url(#liquidBlue)"/>
+    <rect x="322" y="288" width="66" height="18" rx="4" fill="none" stroke="#123c73" stroke-width="5"/>
+    <circle cx="345" cy="460" r="6" fill="#eafcff" opacity=".8"/>
+    <circle cx="375" cy="500" r="4" fill="#eafcff" opacity=".7"/>
+    <circle cx="330" cy="510" r="5" fill="#eafcff" opacity=".7"/>
+  </g>
+
+  <!-- flask 2: round bottom, navy liquid, taller -->
+  <g>
+    <path d="M520 260 L520 350 Q460 400 460 470 A80 80 0 0 0 620 470 Q620 400 560 350 L560 260 Z"
+          fill="#ffffff" opacity=".18" stroke="#0b2f68" stroke-width="5"/>
+    <path d="M462 455 A80 80 0 0 0 618 455 A80 80 0 0 0 462 455 Z" fill="url(#liquidNavy)"/>
+    <rect x="512" y="248" width="56" height="16" rx="4" fill="none" stroke="#0b2f68" stroke-width="5"/>
+    <circle cx="540" cy="440" r="5" fill="#dceaff" opacity=".8"/>
+    <circle cx="565" cy="465" r="4" fill="#dceaff" opacity=".7"/>
+  </g>
+
+  <!-- flask 3: small vial, teal liquid -->
+  <g>
+    <rect x="640" y="380" width="70" height="140" rx="14" fill="#ffffff" opacity=".18" stroke="#2d6bb3" stroke-width="5"/>
+    <path d="M642 470 h66 v36 a14 14 0 0 1 -14 14 h-38 a14 14 0 0 1 -14 -14 z" fill="url(#liquidBlue)"/>
+    <rect x="655" y="360" width="40" height="20" rx="4" fill="none" stroke="#2d6bb3" stroke-width="5"/>
+  </g>
+
+  <!-- rising bubbles -->
+  <g fill="#ffffff" opacity=".7">
+    <circle cx="345" cy="330" r="4"/>
+    <circle cx="360" cy="360" r="3"/>
+    <circle cx="540" cy="300" r="4"/>
+    <circle cx="675" cy="410" r="3"/>
+  </g>
+</svg>
