@@ -1,31 +1,23 @@
-name: Deploy to Beget
+name: Mirror to GitVerse
 
 on:
   push:
     branches: [main]
 
 jobs:
-  ftp-deploy:
+  mirror:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Deploy to Beget via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
-          server-dir: ./
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/.github/**
-            **/figma-export/**
-            **/scripts/**
-            **/reference/**
-            **/docs/**
-            **/.impeccable/**
-            **/.claude/**
+          fetch-depth: 0
+
+      - name: Push mirror to GitVerse
+        env:
+          GITVERSE_TOKEN: ${{ secrets.GITVERSE_TOKEN }}
+          GITVERSE_USER: ${{ vars.GITVERSE_USER }}
+          GITVERSE_REPO: ${{ vars.GITVERSE_REPO }}
+        run: |
+          git remote add gitverse "https://${GITVERSE_USER}:${GITVERSE_TOKEN}@gitverse.ru/${GITVERSE_REPO}.git"
+          git push gitverse HEAD:main --force
